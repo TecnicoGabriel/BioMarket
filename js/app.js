@@ -46,6 +46,19 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+    // ... (tu código anterior del menú) ...
+
+    // --- ACORDEÓN PARA SUBMENÚ MÓVIL ---
+    const mobileDropdownBtn = document.querySelector('.mobile-dropdown-btn');
+    const mobileDropdownContent = document.querySelector('.mobile-dropdown-content');
+
+    if (mobileDropdownBtn && mobileDropdownContent) {
+        mobileDropdownBtn.addEventListener('click', () => {
+            // Alternar clases para mostrar/ocultar
+            mobileDropdownBtn.classList.toggle('active');
+            mobileDropdownContent.classList.toggle('active');
+        });
+    }
 
     window.addEventListener('scroll', checkScroll);
     checkScroll(); // Chequear al inicio

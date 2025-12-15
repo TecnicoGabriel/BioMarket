@@ -187,4 +187,102 @@ body { background: var(--white); color: var(--text); overflow-x: hidden; }
     .hero-content h1 { font-size: 2.2rem; }
     .categories-grid { grid-template-columns: repeat(2, 1fr); }
     .footer-bottom { flex-direction: column; gap: 15px; }
+}/* --- ESTILOS DEL MENÚ DESPLEGABLE (PRODUCTOS) --- */
+.dropdown {
+    position: relative; /* Necesario para ubicar la lista debajo */
+    height: 100%;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%; /* Aparece justo debajo del botón */
+    left: 0;
+    width: 240px; /* Ancho de la lista */
+    background: #ffffff;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Sombrita elegante */
+    border-top: 3px solid #66bb6a; /* Borde verde arriba */
+    display: none; /* Oculto por defecto */
+    border-radius: 0 0 5px 5px;
+    z-index: 1000;
+}
+
+/* Mostrar la lista al pasar el mouse */
+.dropdown:hover .dropdown-menu {
+    display: block;
+    animation: fadeInUp 0.3s ease; /* Pequeña animación de entrada */
+}
+
+/* Estilos de los enlaces dentro de la lista */
+.dropdown-menu li {
+    display: block;
+    width: 100%;
+}
+
+.dropdown-menu li a {
+    display: block;
+    padding: 12px 20px;
+    font-size: 0.9rem;
+    color: #333;
+    border-bottom: 1px solid #f5f5f5;
+    text-align: left;
+    transition: 0.2s;
+}
+
+/* Efecto hover en los items de la lista */
+.dropdown-menu li a:hover {
+    background: #f9f9f9;
+    color: #66bb6a; /* Texto verde */
+    padding-left: 25px; /* Se mueve un poco a la derecha */
+    border-color: transparent;
+}
+
+/* Animación suave */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}/* --- ESTILOS MENÚ MÓVIL (ACORDEÓN) --- */
+.mobile-dropdown-btn {
+    width: 100%;
+    text-align: left;
+    background: none;
+    border: none;
+    padding: 15px 10px;
+    font-size: 1rem;
+    color: #333;
+    border-bottom: 1px solid #f5f5f5;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Jost', sans-serif; /* Asegurar misma fuente */
+}
+
+.mobile-dropdown-btn:hover {
+    color: #66bb6a;
+}
+
+.mobile-dropdown-btn i {
+    transition: transform 0.3s ease;
+}
+
+/* Clase para rotar la flechita cuando está abierto */
+.mobile-dropdown-btn.active i {
+    transform: rotate(180deg);
+}
+
+.mobile-dropdown-content {
+    display: none; /* Oculto por defecto */
+    background-color: #f9f9f9;
+    padding-left: 20px; /* Sangría para sub-items */
+}
+
+.mobile-dropdown-content a {
+    font-size: 0.95rem;
+    border-bottom: 1px solid #eee;
+}
+
+/* Clase para mostrar el contenido */
+.mobile-dropdown-content.active {
+    display: block;
+    animation: fadeIn 0.3s;
 }
