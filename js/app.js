@@ -1,61 +1,52 @@
 document.addEventListener('DOMContentLoaded', () => {
     
-    // 1. MENÚ MÓVIL (Toggle)
-    const menuToggle = document.getElementById('menu-toggle');
-    const navbar = document.getElementById('navbar');
-    const closeMenu = document.getElementById('close-menu');
+    // --- 1. MENÚ MÓVIL ---
+    const menuBtn = document.getElementById('menu-btn');
+    const closeBtn = document.getElementById('close-menu');
+    const mobileNav = document.getElementById('mobile-nav');
+    const overlay = document.getElementById('mobile-overlay');
 
-    if(menuToggle){
-        menuToggle.addEventListener('click', () => {
-            navbar.classList.add('active');
-        });
+    function toggleMenu() {
+        mobileNav.classList.toggle('active');
+        overlay.classList.toggle('active');
+        document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : 'auto';
     }
 
-    if(closeMenu){
-        closeMenu.addEventListener('click', () => {
-            navbar.classList.remove('active');
-        });
-    }
+    if(menuBtn) menuBtn.addEventListener('click', toggleMenu);
+    if(closeBtn) closeBtn.addEventListener('click', toggleMenu);
+    if(overlay) overlay.addEventListener('click', toggleMenu);
 
-    // 2. RENDERIZAR CARRUSEL (Usando js/productos.js)
-    const track = document.getElementById('carrusel-track');
-    
-    if (track && typeof productos !== 'undefined') {
-        // Mostramos solo los primeros 6 como "Destacados"
-        const destacados = productos.slice(0, 6); 
+    // --- 2. VER MÁS CATEGORÍAS (TOGGLE) ---
+    const toggleCatsBtn = document.getElementById('toggle-cats-btn');
+    const moreCatsDiv = document.getElementById('more-cats');
 
-        destacados.forEach(producto => {
-            const card = document.createElement('div');
-            card.classList.add('product-card');
+    if(toggleCatsBtn && moreCatsDiv) {
+        toggleCatsBtn.addEventListener('click', () => {
+            moreCatsDiv.classList.toggle('active');
             
-            // Si la imagen falla o es placeholder, usa una por defecto visual
-            const imgUrl = producto.imagen || 'img/placeholder.jpg';
-
-            card.innerHTML = `
-                <div class="card-img">
-                    <img src="${imgUrl}" alt="${producto.nombre}">
-                </div>
-                <div class="card-info">
-                    <span class="card-cat">${producto.categoria}</span>
-                    <h4>${producto.nombre}</h4>
-                    <span class="card-price">S/ ${producto.precio.toFixed(2)}</span>
-                    <button class="btn btn-primary" style="padding: 10px 20px; font-size: 0.8rem; width: 100%;">Ver Producto</button>
-                </div>
-            `;
-            track.appendChild(card);
+            // Cambiar texto del botón
+            if(moreCatsDiv.classList.contains('active')) {
+                toggleCatsBtn.innerHTML = 'Ver menos categorías <i class="fas fa-chevron-up"></i>';
+            } else {
+                toggleCatsBtn.innerHTML = 'Ver más categorías <i class="fas fa-chevron-down"></i>';
+            }
         });
     }
 
-    // 3. BOTONES CARRUSEL
-    const prevBtn = document.querySelector('.prev-btn');
-    const nextBtn = document.querySelector('.next-btn');
+    // --- 3. ANIMACIONES AL SCROLLEAR (SCROLL REVEAL) ---
+    const reveals = document.querySelectorAll('.reveal');
 
-    if (prevBtn && nextBtn && track) {
-        nextBtn.addEventListener('click', () => {
-            track.scrollBy({ left: 320, behavior: 'smooth' });
-        });
-        prevBtn.addEventListener('click', () => {
-            track.scrollBy({ left: -320, behavior: 'smooth' });
+    function checkScroll() {
+        const triggerBottom = window.innerHeight * 0.85; // Punto de activación
+
+        reveals.forEach(reveal => {
+            const boxTop = reveal.getBoundingClientRect().top;
+            if(boxTop < triggerBottom) {
+                reveal.classList.add('active');
+            }
         });
     }
+
+    window.addEventListener('scroll', checkScroll);
+    checkScroll(); // Chequear al inicio
 });

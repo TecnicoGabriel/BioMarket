@@ -3,192 +3,344 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Primaverita Naturals | Bienestar Orgánico</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>PrimaveritaNaturals | Megatienda Natural</title>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
     <div class="top-bar">
-        <div class="container">
-            <span><i class="fas fa-truck"></i> Envíos gratis a todo Lima por compras mayores a S/150</span>
-            <div class="top-socials">
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-whatsapp"></i></a>
-            </div>
+        <div class="container top-flex">
+            <span><i class="fas fa-truck-moving"></i> Envíos GRATIS > S/150</span>
+            <span><i class="fas fa-star"></i> Calidad Premium Garantizada</span>
         </div>
     </div>
 
-    <header class="header" id="header">
-        <div class="container header-content">
-            <a href="index.html" class="logo">Primaverita<span>Naturals.</span></a>
+    <header class="header">
+        <div class="container header-flex">
             
-            <nav class="navbar" id="navbar">
-                <a href="index.html" class="active">Inicio</a>
-                <a href="catalogo.html">Tienda</a>
-                <a href="nosotros.html">Nosotros</a>
-                <a href="blog.html">Blog </a>
-                <a href="contacto.html">Contacto</a>
-                <div class="close-menu" id="close-menu"><i class="fas fa-times"></i></div>
-            </nav>
+            <a href="index.html" class="logo">
+                Primaverita<span class="green">Naturals</span>.
+            </a>
+
+            <div class="search-bar-wrapper">
+                <form action="" class="search-form">
+                    <input type="search" placeholder="Busca tu bienestar...">
+                    <button><i class="fas fa-search"></i></button>
+                </form>
+            </div>
 
             <div class="header-actions">
-                <i class="fas fa-search search-icon" id="search-btn"></i>
-                <div class="menu-toggle" id="menu-toggle"><i class="fas fa-bars"></i></div>
+                <div id="menu-btn" class="icon-btn mobile-toggle"><i class="fas fa-bars"></i></div>
             </div>
+
         </div>
+
+        <nav class="navbar desktop-nav">
+            <div class="container">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="active">Inicio</a></li>
+                    <li><a href="catalogo.html">Tienda</a></li>
+                    <li><a href="nosotros.html">Nosotros</a></li>
+                    <li><a href="blog.html">Blog Saludable</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+        </nav>
     </header>
 
-    <main>
-        <section class="hero">
-            <div class="hero-text">
-                <span class="badge-pill">Nueva Colección 2025</span>
-                <h1>Nutrición consciente <br>para una vida plena</h1>
-                <p>Ingredientes puros, trazables y 100% naturales diseñados para potenciar tu salud desde el interior.</p>
-                <a href="catalogo.html" class="btn btn-primary">Explorar Catálogo</a>
-            </div>
-            </section>
+    <div class="mobile-overlay" id="mobile-overlay"></div>
+    <div class="mobile-nav" id="mobile-nav">
+        <div class="mobile-header">
+            <h3>Menú</h3>
+            <i class="fas fa-times" id="close-menu"></i>
+        </div>
+        <div class="mobile-search">
+            <input type="text" placeholder="Buscar producto...">
+            <button><i class="fas fa-search"></i></button>
+        </div>
+        <div class="mobile-links">
+            <a href="index.html">Inicio</a>
+            <a href="catalogo.html">Ver Todo el Catálogo</a>
+            <a href="#">Ofertas Especiales</a>
+            <a href="blog.html">Blog</a>
+            <a href="contacto.html">Contacto</a>
+        </div>
+    </div>
 
-        <section class="categories section-padding">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Explora por Categoría</h2>
-                    <p>Encuentra exactamente lo que tu cuerpo necesita</p>
+    <section class="hero">
+        <div class="hero-slide active" style="background-image: url('https://images.unsplash.com/photo-1544367563-12123d8965cd?q=80&w=1920&auto=format&fit=crop');">
+            <div class="container hero-content reveal-text">
+                <span class="tag">Solo por tiempo limitado</span>
+                <h1>Revitaliza tu <br> Energía Vital</h1>
+                <p>Suplementos 100% orgánicos para un estilo de vida consciente.</p>
+                <div class="hero-btns">
+                    <a href="catalogo.html" class="btn primary-btn">Comprar Ahora</a>
+                    <a href="#categorias" class="btn outline-btn white">Ver Categorías</a>
                 </div>
-                <div class="categories-grid">
-                    <div class="cat-card" style="background-image: url('img/cat-vitaminas.jpg');"> <div class="cat-content">
-                            <h3>Vitaminas</h3>
-                            <a href="catalogo.html">Ver más <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <div class="marquee-container">
+        <div class="marquee-content">
+            <span>✨ Productos 100% Naturales</span>
+            <span>🚚 Envíos a todo el Perú</span>
+            <span>💳 Pagos Seguros con Yape/Plin</span>
+            <span>🌿 Asesoría Gratuita</span>
+            <span>✨ Productos 100% Naturales</span>
+            <span>🚚 Envíos a todo el Perú</span>
+        </div>
+    </div>
+
+    <section class="section container" id="categorias">
+        <div class="section-header reveal">
+            <h2 class="section-title">Explora por <span>Categoría</span></h2>
+            <p>Encuentra exactamente lo que tu cuerpo necesita</p>
+        </div>
+        
+        <div class="categories-grid reveal">
+            <a href="#" class="cat-card">
+                <img src="https://bionaturista.pe/wp-content/uploads/2023/08/BANNER-CANALES-DE-VENTA.png" alt="Vitaminas">
+                <h3>Vitaminas</h3>
+            </a>
+            <a href="#" class="cat-card">
+                <img src="https://bionaturista.pe/wp-content/uploads/2025/06/PACK-PROSTATA-WEB.png" alt="Proteínas">
+                <h3>Proteínas</h3>
+            </a>
+            <a href="#" class="cat-card">
+                <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=300" alt="Piel">
+                <h3>Productos Nutritivos</h3>
+            </a>
+            <a href="#" class="cat-card">
+                <img src="https://images.unsplash.com/photo-1512069772995-ec65ed45afd6?w=300" alt="Hogar">
+                <h3>Bebidas</h3>
+            </a>
+        </div>
+
+        <div class="categories-grid hidden-cats" id="more-cats">
+            <a href="#" class="cat-card">
+                <img src="https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?w=300" alt="Aceites">
+                <h3>Concentrados</h3>
+            </a>
+            <a href="#" class="cat-card">
+                <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=300" alt="Detox">
+                <h3>Vinagres</h3>
+            </a>
+            <a href="#" class="cat-card">
+                <img src="https://images.unsplash.com/photo-1552693673-1bf958298935?w=300" alt="Té">
+                <h3>Infusiones</h3>
+            </a>
+            <a href="#" class="cat-card">
+                <img src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=300" alt="Salud">
+                <h3>Medicina</h3>
+            </a>
+        </div>
+
+        <div class="center-btn reveal">
+            <button class="btn outline-btn" id="toggle-cats-btn">Ver más categorías <i class="fas fa-chevron-down"></i></button>
+        </div>
+    </section>
+
+    <section class="section bg-light">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2 class="section-title">Nuestros <span>Best-Sellers</span></h2>
+            </div>
+            
+            <div class="products-grid reveal">
+                <div class="product-card">
+                    <span class="badge sale">-20%</span>
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1608248597279-f99d160bfbc8?w=400" alt="">
+                        <div class="actions">
+                            <button><i class="far fa-heart"></i></button>
+                            <button><i class="fas fa-shopping-cart"></i></button>
                         </div>
                     </div>
-                    <div class="cat-card" style="background-image: url('img/cat-proteina.jpg');">
-                        <div class="cat-content">
-                            <h3>Proteínas</h3>
-                            <a href="catalogo.html">Ver más <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                    <div class="cat-card" style="background-image: url('img/cat-superfoods.jpg');">
-                        <div class="cat-content">
-                            <h3>Superfoods</h3>
-                            <a href="catalogo.html">Ver más <i class="fas fa-arrow-right"></i></a>
-                        </div>
+                    <div class="product-info">
+                        <small>Facial</small>
+                        <h3>Serum Vitamina C</h3>
+                        <div class="price">S/ 45.00 <del>S/ 55.00</del></div>
                     </div>
                 </div>
-            </div>
-        </section>
 
-        <section class="benefits">
-            <div class="container benefits-wrapper">
-                <div class="benefit-item">
-                    <i class="fas fa-seedling"></i>
-                    <h4>100% Orgánico</h4>
-                    <p>Certificación internacional</p>
-                </div>
-                <div class="benefit-item">
-                    <i class="fas fa-flask"></i>
-                    <h4>Sin Químicos</h4>
-                    <p>Libre de preservantes</p>
-                </div>
-                <div class="benefit-item">
-                    <i class="fas fa-heart"></i>
-                    <h4>Cruelty Free</h4>
-                    <p>Amamos a los animales</p>
-                </div>
-                <div class="benefit-item">
-                    <i class="fas fa-shipping-fast"></i>
-                    <h4>Envíos 24h</h4>
-                    <p>Directo a tu puerta</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="products-section section-padding">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Nuestros Best-Sellers</h2>
-                    <p>Los favoritos de la comunidad Primaverita</p>
-                </div>
-                
-                <div class="carousel-wrapper">
-                    <button class="nav-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
-                    <div class="carousel-track" id="carrusel-track">
+                <div class="product-card">
+                    <span class="badge new">Nuevo</span>
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=400" alt="">
+                         <div class="actions">
+                            <button><i class="far fa-heart"></i></button>
+                            <button><i class="fas fa-shopping-cart"></i></button>
                         </div>
-                    <button class="nav-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                    <div class="product-info">
+                        <small>Salud</small>
+                        <h3>Magnesio Citrato</h3>
+                        <div class="price">S/ 80.00</div>
+                    </div>
                 </div>
-                
-                <div class="center-btn">
-                    <a href="catalogo.html" class="btn btn-secondary">Ver toda la tienda</a>
+
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1552693673-1bf958298935?w=400" alt="">
+                         <div class="actions">
+                            <button><i class="far fa-heart"></i></button>
+                            <button><i class="fas fa-shopping-cart"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <small>Energía</small>
+                        <h3>Té Matcha Ceremonial</h3>
+                        <div class="price">S/ 65.00</div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1597481499750-3e6b22637e12?w=400" alt="">
+                         <div class="actions">
+                            <button><i class="far fa-heart"></i></button>
+                            <button><i class="fas fa-shopping-cart"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <small>Aromaterapia</small>
+                        <h3>Aceite Esencial Lavanda</h3>
+                        <div class="price">S/ 25.00</div>
+                    </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section class="big-banner">
-            <div class="banner-content">
-                <h2>El cambio empieza hoy</h2>
-                <p>Únete a más de 5,000 personas que han mejorado su estilo de vida.</p>
+    <section class="section container">
+        <div class="features-wrapper reveal">
+            <div class="feature-box">
+                <i class="fas fa-shipping-fast"></i>
+                <div>
+                    <h4>Envío Rápido</h4>
+                    <p>En todo Lima y Provincias</p>
+                </div>
             </div>
-        </section>
+            <div class="feature-box">
+                <i class="fas fa-shield-alt"></i>
+                <div>
+                    <h4>Pago Seguro</h4>
+                    <p>Tus datos protegidos</p>
+                </div>
+            </div>
+            <div class="feature-box">
+                <i class="fas fa-headset"></i>
+                <div>
+                    <h4>Soporte 24/7</h4>
+                    <p>Atención por WhatsApp</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    </main>
+    <section class="section bg-light">
+        <div class="container reveal">
+            <h2 class="section-title text-center">Clientes <span>Felices</span></h2>
+            <div class="testimonials-grid">
+                <div class="testi-card">
+                    <p>"Me encantan los productos, llegaron súper rápido y la calidad es excelente. Recomendado al 100%."</p>
+                    <div class="user">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="">
+                        <div>
+                            <h5>María P.</h5>
+                            <small>Cliente Verificado</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="testi-card">
+                    <p>"El magnesio cambió mi vida, duermo mucho mejor. Gracias Primaverita por la asesoría."</p>
+                    <div class="user">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="">
+                        <div>
+                            <h5>Carlos R.</h5>
+                            <small>Cliente Verificado</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section container reveal">
+        <h2 class="section-title text-center">Blog <span>Saludable</span></h2>
+        <div class="blog-grid">
+            <article class="blog-card">
+                <div class="blog-img"><img src="https://images.unsplash.com/photo-1544367563-12123d8965cd?w=400" alt=""></div>
+                <div class="blog-content">
+                    <small>12 Dic 2025</small>
+                    <h4>Beneficios del Colágeno</h4>
+                    <a href="#">Leer más <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </article>
+            <article class="blog-card">
+                <div class="blog-img"><img src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=400" alt=""></div>
+                <div class="blog-content">
+                    <small>10 Dic 2025</small>
+                    <h4>Rutina Detox 7 Días</h4>
+                    <a href="#">Leer más <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </article>
+        </div>
+    </section>
 
     <footer class="footer">
         <div class="container">
             <div class="footer-top">
-                <div class="footer-col brand-col">
-                    <a href="#" class="footer-logo">Primaverita<span>Naturals.</span></a>
-                    <p>Somos una marca peruana dedicada a traer lo mejor de la naturaleza a tu hogar. Salud real, sin complicaciones.</p>
-                    <div class="social-links">
+                <div class="footer-col">
+                    <a href="#" class="logo footer-logo">Primaverita<span>Naturals</span></a>
+                    <p>Tu tienda especialista en bienestar natural. Llevamos salud a la puerta de tu casa.</p>
+                    <div class="socials">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
                         <a href="#"><i class="fab fa-tiktok"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
-
                 <div class="footer-col">
-                    <h4>Explora</h4>
-                    <ul>
-                        <li><a href="index.html">Inicio</a></li>
-                        <li><a href="catalogo.html">Tienda</a></li>
-                        <li><a href="nosotros.html">Nuestra Historia</a></li>
-                        <li><a href="blog.html">Blog Saludable</a></li>
-                    </ul>
+                    <h3>Empresa</h3>
+                    <a href="#">Nosotros</a>
+                    <a href="#">Catálogo</a>
+                    <a href="#">Blog</a>
+                    <a href="#">Contacto</a>
                 </div>
-
                 <div class="footer-col">
-                    <h4>Ayuda & Legal</h4>
-                    <ul>
-                        <li><a href="#">Preguntas Frecuentes</a></li>
-                        <li><a href="#">Términos y Condiciones</a></li>
-                        <li><a href="#">Política de Privacidad</a></li>
-                        <li><a href="#">Libro de Reclamaciones</a></li>
-                    </ul>
+                    <h3>Ayuda</h3>
+                    <a href="#">Envíos</a>
+                    <a href="#">Devoluciones</a>
+                    <a href="#">Preguntas Frecuentes</a>
+                    <a href="#">Términos</a>
                 </div>
-
                 <div class="footer-col">
-                    <h4>Contáctanos</h4>
-                    <ul class="contact-list">
-                        <li><i class="fas fa-map-marker-alt"></i> Av. La Naturaleza 123, Miraflores, Lima</li>
-                        <li><i class="fas fa-envelope"></i> hola@primaveritanaturals.com</li>
-                        <li><i class="fas fa-phone-alt"></i> (01) 234-5678</li>
-                    </ul>
+                    <h3>Suscríbete</h3>
+                    <p>Recibe ofertas exclusivas en tu correo.</p>
+                    <form class="subscribe-form">
+                        <input type="email" placeholder="Tu correo...">
+                        <button><i class="fas fa-paper-plane"></i></button>
+                    </form>
                 </div>
             </div>
-
             <div class="footer-bottom">
                 <p>&copy; 2025 Primaverita Naturals. Todos los derechos reservados.</p>
-                <div class="payment-methods">
+                <div class="payments">
                     <i class="fab fa-cc-visa"></i>
                     <i class="fab fa-cc-mastercard"></i>
-                    <i class="fab fa-cc-amex"></i>
-                    <i class="fab fa-cc-paypal"></i>
+                    <i class="fas fa-money-bill-wave"></i>
                 </div>
             </div>
         </div>
     </footer>
 
-    <script src="js/productos.js"></script>
+    <a href="https://wa.me/51999999999" class="whatsapp-btn" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
     <script src="js/app.js"></script>
 </body>
 </html>
