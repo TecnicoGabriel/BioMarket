@@ -83,11 +83,39 @@ body { background: var(--white); color: var(--text); overflow-x: hidden; }
 .hero-btns { display: flex; gap: 15px; margin-top: 30px; }
 
 /* --- MARQUEE --- */
-.marquee-container { background: var(--primary); padding: 10px 0; overflow: hidden; white-space: nowrap; color: white; font-weight: 600; text-transform: uppercase; font-size: 0.9rem; }
-.marquee-content { display: inline-block; animation: scroll 20s linear infinite; }
-.marquee-content span { margin-right: 50px; }
-@keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+/* --- CINTA MARQUEE CORREGIDA --- */
+.marquee-container {
+    background: var(--primary);
+    padding: 12px 0;
+    overflow: hidden; /* Oculta lo que se sale de la pantalla */
+    width: 100%;
+    position: relative;
+}
 
+.marquee-content {
+    display: inline-block;
+    white-space: nowrap; /* Evita que el texto baje de línea */
+    
+    /* ANIMACIÓN */
+    animation: scroll-text 25s linear infinite;
+    
+    /* ESTILOS DEL TEXTO */
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+.marquee-content span {
+    margin-right: 50px; /* Espacio entre frases */
+}
+
+/* LA MAGIA: De la derecha (fuera de pantalla) a la izquierda */
+@keyframes scroll-text {
+    0% { transform: translateX(100vw); } /* Empieza fuera a la derecha */
+    100% { transform: translateX(-100%); } /* Termina fuera a la izquierda */
+}
 /* --- CATEGORÍAS --- */
 .section-header { text-align: center; margin-bottom: 40px; }
 .section-title { font-size: 2.2rem; color: var(--dark); margin-bottom: 10px; }
