@@ -237,26 +237,6 @@ footer { background: #0a1f12; color: #e0e0e0; padding-top: 5rem; font-family: va
 .btn-modal-wa { background: #25D366; border: none; color: white; padding: 14px; border-radius: 50px; font-weight: 600; cursor: pointer; display: flex; justify-content: center; align-items: center; gap: 10px; transition: 0.3s; }
 .btn-modal-wa:hover { background: #1ebc57; }
 
-
-/* =========================================
-   9. MEDIA QUERIES (PC)
-   ========================================= */
-@media (min-width: 901px) {
-    .nav-links { display: flex; gap: 2.5rem; align-items: center; }
-    .nav-links a { font-weight: 500; font-size: 1rem; color: var(--dark-text); display: flex; align-items: center; gap: 8px; transition: var(--transition); }
-    .nav-links > li > a:hover { color: var(--secondary-color); }
-    .dropdown { position: relative; }
-    .dropdown-menu { position: absolute; top: 100%; left: 50%; transform: translateX(-50%) translateY(15px); background: var(--surface-color); width: 240px; box-shadow: var(--shadow-md); opacity: 0; visibility: hidden; transition: var(--transition); border-radius: 15px; padding: 10px 0; z-index: 1000; overflow: visible; }
-    .dropdown:hover .dropdown-menu { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
-    .has-submenu { position: relative; }
-    .submenu-inner { position: absolute; top: 0; left: 100%; background: var(--surface-color); width: 220px; box-shadow: var(--shadow-md); border-radius: 15px; padding: 10px 0; opacity: 0; visibility: hidden; transition: 0.3s; border-left: 3px solid var(--secondary-color); }
-    .has-submenu:hover > .submenu-inner { opacity: 1; visibility: visible; transform: translateX(5px); }
-    .dropdown-menu li a { padding: 12px 25px; font-size: 0.95rem; color: var(--light-text); display: flex; justify-content: flex-start; }
-    .dropdown-menu li a:hover { background: var(--bg-color); color: var(--primary-color); padding-left: 30px; }
-    .arrow-icon { font-size: 0.7rem; opacity: 0.4; margin-left: auto;}
-    .product-grid, .tips-grid, .testimonial-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.5rem; }
-    .section-padding { padding: 6rem 5%; }
-}
 /* ESTILOS DE BUSCADOR Y FILTROS */
 .controls-wrapper { display: flex; justify-content: space-between; align-items: center; background: var(--surface-color); padding: 20px; border-radius: 15px; box-shadow: var(--shadow-sm); margin-bottom: 15px; gap: 20px; border: 1px solid rgba(15, 76, 40, 0.05); }
 .search-box { position: relative; flex: 1; max-width: 400px; }
@@ -270,28 +250,67 @@ footer { background: #0a1f12; color: #e0e0e0; padding-top: 5rem; font-family: va
 .results-count { color: var(--light-text); font-size: 0.95rem; padding-left: 10px; font-weight: 500; }
 .results-count span { color: var(--primary-color); font-weight: 700; font-size: 1.1rem; }
 
-@media (max-width: 900px) {
-    .controls-wrapper { flex-direction: column; align-items: stretch; padding: 15px; }
-    .search-box { max-width: 100%; }
-    .sort-buttons { justify-content: center; }
-    .sort-btn { padding: 8px 15px; font-size: 0.85rem; flex: 1; justify-content: center; }
+
+/* =========================================
+   9. MEDIA QUERIES (PC y Tablets Grandes)
+   ========================================= */
+@media (min-width: 1025px) {
+    .nav-links { display: flex; gap: 2.5rem; align-items: center; }
+    .nav-links a { font-weight: 500; font-size: 1rem; color: var(--dark-text); display: flex; align-items: center; gap: 8px; transition: var(--transition); }
+    .nav-links > li > a:hover { color: var(--secondary-color); }
+    
+    .dropdown { position: relative; }
+    .dropdown-menu { position: absolute; top: 100%; left: 50%; transform: translateX(-50%) translateY(15px); background: var(--surface-color); width: 240px; box-shadow: var(--shadow-md); opacity: 0; visibility: hidden; transition: var(--transition); border-radius: 15px; padding: 10px 0; z-index: 1000; overflow: visible; }
+    .dropdown:hover .dropdown-menu { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
+    
+    .has-submenu { position: relative; }
+    .submenu-inner { position: absolute; top: 0; left: 100%; background: var(--surface-color); width: 220px; box-shadow: var(--shadow-md); border-radius: 15px; padding: 10px 0; opacity: 0; visibility: hidden; transition: 0.3s; border-left: 3px solid var(--secondary-color); }
+    .has-submenu:hover > .submenu-inner { opacity: 1; visibility: visible; transform: translateX(5px); }
+    
+    .dropdown-menu li a { padding: 12px 25px; font-size: 0.95rem; color: var(--light-text); display: flex; justify-content: flex-start; }
+    .dropdown-menu li a:hover { background: var(--bg-color); color: var(--primary-color); padding-left: 30px; }
+    .arrow-icon { font-size: 0.7rem; opacity: 0.4; margin-left: auto;}
+    
+    /* 4 COLUMNAS INAMOVIBLES EN PC */
+    .product-grid { 
+        display: grid !important; 
+        grid-template-columns: repeat(4, 1fr) !important; 
+        gap: 2.5rem !important; 
+        align-items: stretch !important;
+    }
+    
+    .tips-grid, .testimonial-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.5rem; }
+    .section-padding { padding: 6rem 5%; }
+}
+
+/* =========================================
+   10. MEDIA QUERIES (TABLETS: 769px a 1024px)
+   ========================================= */
+@media (min-width: 769px) and (max-width: 1024px) {
+    /* 3 COLUMNAS EN TABLET */
+    .product-grid {
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important; 
+        gap: 15px !important;
+        padding: 0 20px !important;
+    }
 }
 
 
 /* =========================================
-   📱 10. MEDIA QUERIES BLINDADO (MÓVIL DEFINITIVO)
+   📱 11. MEDIA QUERIES BLINDADO (MÓVIL DEFINITIVO)
    ========================================= */
 @media (max-width: 900px) {
-    /* HEADER ARREGLADO (Adiós Choques) */
+    /* HEADER ARREGLADO */
     .header-content { padding: 0 10px !important; }
     .logo { font-size: 1.1rem !important; white-space: nowrap !important; } 
     .header-icons { gap: 10px !important; } 
     .menu-toggle { display: flex !important; order: 3; transform: scale(0.85); }
     
-    /* CARRUSEL ARREGLADO (Oculta flechas) */
+    /* CARRUSEL Y FLECHAS */
     .hero-carousel { height: 50vh !important; min-height: 400px !important; }
     .hero-text h1 { font-size: 2.2rem !important; }
-    .prev, .next { display: none !important; } /* Esto borra las flechas en móvil */
+    .prev, .next { display: none !important; } 
 
     /* MENÚ MÓVIL DESLIZABLE */
     .nav-links {
@@ -305,9 +324,7 @@ footer { background: #0a1f12; color: #e0e0e0; padding-top: 5rem; font-family: va
     .nav-links i { width: 25px; text-align: center; margin-right: 15px !important; color: var(--secondary-color); }
     
     /* SUBMENÚS */
-    .dropdown-menu, .submenu-inner {
-        position: static !important; width: 100% !important; display: none !important; box-shadow: none !important; border-radius: 0 !important;
-    }
+    .dropdown-menu, .submenu-inner { position: static !important; width: 100% !important; display: none !important; box-shadow: none !important; border-radius: 0 !important; }
     .dropdown.active > .dropdown-menu { display: block !important; background: #fdfdfd; border-top: 1px solid #eee; }
     .has-submenu.active-mobile > .submenu-inner { display: block !important; background: #f4f9f4; }
     .dropdown-menu > li > a { padding: 15px 25px 15px 50px !important; border-bottom: 1px dashed #eee; font-size: 1rem; display: flex; justify-content: flex-start; align-items: center; }
@@ -317,45 +334,69 @@ footer { background: #0a1f12; color: #e0e0e0; padding-top: 5rem; font-family: va
     .has-submenu.active-mobile > a .arrow-icon { transform: rotate(90deg); color: var(--accent-color); }
     .nav-links a:hover, .dropdown-menu li a:hover, .submenu-inner li a:hover { background: transparent !important; color: inherit !important; }
 
-    /* GRIDS DE PRODUCTOS (2 COLUMNAS ESTRICTAS SIEMPRE) */
-    .product-grid { display: grid !important; grid-template-columns: repeat(4, 1fr) !important; gap: 10px !important; padding: 0 10px !important; }
-    .product-grid > *:last-child:nth-child(odd) { grid-column: auto !important; }
-    .card-img-container { height: 140px !important; } 
-    .p-info { padding: 12px !important; }
-    .p-info h3 { font-size: 0.85rem !important; margin-bottom: 5px !important; line-height: 1.2 !important; }
-    .price-container { flex-direction: column !important; gap: 0 !important; margin-bottom: 10px !important; }
-    .old-price { font-size: 0.75rem !important; }
-    .new-price { font-size: 1.1rem !important; }
-    .btn-add { padding: 8px !important; font-size: 0.8rem !important; }
-    
     /* CATEGORÍAS (BOTONES EN 2 COLUMNAS) */
     .pills-container { flex-wrap: wrap !important; justify-content: center !important; overflow-x: hidden !important; padding: 0 10px 10px 10px !important; }
     .cat-pill { width: calc(50% - 8px) !important; text-align: center !important; padding: 10px 5px !important; font-size: 0.85rem !important; white-space: normal !important; line-height: 1.2 !important; }
     .toggle-more-btn { width: 100% !important; margin-top: 5px !important; padding: 12px !important; }
 
-    /* MODAL MÓVIL (COMPACTO, APILADO Y SIN CORTES) */
+    /* CONTROLES DEL BUSCADOR */
+    .controls-wrapper { flex-direction: column; align-items: stretch; padding: 15px; }
+    .search-box { max-width: 100%; }
+    .sort-buttons { justify-content: center; }
+    .sort-btn { padding: 8px 15px; font-size: 0.85rem; flex: 1; justify-content: center; }
+
+    /* FOOTER MÓVIL CENTRADO */
+    .footer-content { display: flex !important; flex-direction: column !important; align-items: center !important; text-align: center !important; gap: 2rem !important; padding: 20px 15px !important; }
+    .footer-col { width: 100% !important; display: flex !important; flex-direction: column !important; align-items: center !important; }
+    .footer-logo { justify-content: center !important; display: flex !important; margin-bottom: 10px !important; width: 100% !important;}
+    .contact-list { width: 100% !important; padding: 0 !important; }
+    .contact-list li { justify-content: center !important; margin-bottom: 10px !important; }
+    .footer-btn-wa { display: flex !important; justify-content: center !important; margin: 10px auto 0 !important; }
+    .socials { justify-content: center !important; gap: 15px !important; width: 100% !important;}
+
+    /* CARRITO LATERAL MÓVIL */
+    .cart-sidebar { width: 100% !important; right: -100% !important; }
+}
+
+/* =========================================
+   📱 12. MÓVIL ESTRICTO: PRODUCTOS Y MODAL (Hasta 768px)
+   ========================================= */
+@media (max-width: 768px) {
+    /* 2 COLUMNAS ESTRICTAS PARA PRODUCTOS */
+    .product-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 10px !important;
+        padding: 0 10px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+    .product-card { width: 100% !important; min-width: 0 !important; }
+    .card-img-container { height: 130px !important; }
+    
+    .p-info { padding: 12px 8px !important; text-align: center !important; }
+    .p-info h3 { font-size: 0.85rem !important; margin-bottom: 5px !important; line-height: 1.2 !important; white-space: normal !important; }
+    
+    .price-container { flex-direction: column !important; gap: 2px !important; margin-bottom: 10px !important; align-items: center !important; }
+    .old-price { font-size: 0.75rem !important; }
+    .new-price { font-size: 1.1rem !important; }
+    .btn-add { padding: 8px 5px !important; font-size: 0.75rem !important; white-space: normal !important; }
+
+    /* MODAL MÓVIL (COMPACTO Y APILADO) */
     .modal-content {
         width: 95% !important; max-height: 90vh !important; border-radius: 15px !important;
         display: flex !important; flex-direction: column !important; overflow-y: auto !important; 
         margin: 0 auto !important;
     }
-    .modal-body { 
-        display: flex !important; flex-direction: column !important; width: 100% !important; 
-    }
-    .modal-img-container { 
-        width: 100% !important; height: auto !important; padding: 30px 20px 20px !important; 
-    }
-    .modal-img-container img { max-height: 160px !important; margin: 0 auto !important; display: block !important; }
+    .modal-body { display: flex !important; flex-direction: column !important; width: 100% !important; }
+    
+    .modal-img-container { width: 100% !important; height: auto !important; padding: 30px 20px 20px !important; display: block !important; text-align: center !important; }
+    .modal-img-container img { max-height: 160px !important; margin: 0 auto !important; display: inline-block !important; }
     .modal-badge { top: 10px !important; left: 10px !important; font-size: 0.75rem !important; padding: 4px 10px !important; }
     
-    .modal-info { 
-        width: 100% !important; padding: 20px !important; position: static !important; 
-        display: flex !important; flex-direction: column !important;
-    }
-    .close-modal {
-        top: 10px !important; right: 10px !important; width: 32px !important; height: 32px !important;
-        background: rgba(255,255,255,0.95) !important; box-shadow: 0 2px 10px rgba(0,0,0,0.1) !important; z-index: 50 !important;
-    }
+    .modal-info { width: 100% !important; padding: 20px !important; display: block !important; }
+    
+    .close-modal { top: 10px !important; right: 10px !important; width: 32px !important; height: 32px !important; background: rgba(255,255,255,0.95) !important; box-shadow: 0 2px 10px rgba(0,0,0,0.1) !important; z-index: 50 !important; }
 
     #m-title { font-size: 1.5rem !important; margin-bottom: 5px !important; }
     .modal-description { font-size: 0.85rem !important; margin-bottom: 10px !important; line-height: 1.4 !important; }
@@ -368,22 +409,11 @@ footer { background: #0a1f12; color: #e0e0e0; padding-top: 5rem; font-family: va
     
     .qty-selector { margin-bottom: 15px !important; flex-direction: row !important; gap: 10px !important; justify-content: flex-start !important; }
     
-    /* BOTONES DE COMPRA UNO DEBAJO DEL OTRO */
-    .modal-buttons { 
-        display: flex !important; flex-direction: column !important; gap: 10px !important; 
-    }
-    .btn-modal-cart, .btn-modal-wa { 
-        width: 100% !important; padding: 12px !important; font-size: 0.95rem !important; justify-content: center !important;
-    }
-
-    /* CARRITO LATERAL MÓVIL */
-    .cart-sidebar { width: 100% !important; right: -100% !important; }
-
-    /* FOOTER MÓVIL */
-    footer { padding-top: 2rem !important; }
-    .footer-content { display: flex !important; flex-direction: column !important; align-items: center !important; text-align: center !important; gap: 1.5rem !important; padding-bottom: 1.5rem !important; }
+    .modal-buttons { display: flex !important; flex-direction: column !important; gap: 10px !important; }
+    .btn-modal-cart, .btn-modal-wa { width: 100% !important; padding: 12px !important; font-size: 0.95rem !important; justify-content: center !important; }
 }
 
 @media (max-width: 400px) {
     .logo { font-size: 1.05rem !important; }
+    .card-img-container { height: 110px !important; }
 }
