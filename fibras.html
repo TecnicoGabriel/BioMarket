@@ -3,41 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Primaverita Naturales | Vitaminas</title>
+    <title>Primaverita Naturals | Fibras</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/movil.css">
-    
-    <style>
-        /* En PC: 4 Columnas */
-        @media (min-width: 901px) {
-            .grid-vitaminas {
-                display: grid;
-                grid-template-columns: repeat(4, 1fr); /* 4 columnas exactas */
-                gap: 2rem;
-            }
-        }
-        /* En Móvil: 2 Columnas (Ya lo tienes en tu CSS global, pero aseguramos) */
-        @media (max-width: 900px) {
-            .grid-vitaminas {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                gap: 15px;
-                padding: 0 15px;
-            }
-        }
-    </style>
 </head>
 <body>
 
     <header class="main-header">
-    <div class="header-content">
-        <a href="#" class="logo">
-            🌿 Primaverita <span class="highlight">Naturals</span>
-        </a>
+        <div class="header-content">
+            <a href="index.html" class="logo">
+                🌿 Primaverita <span class="highlight">Naturals</span>
+            </a>
 
-        <nav class="navbar">
+           <nav class="navbar">
             <ul class="nav-links" id="navLinks">
                 <li><a href="index.html" class="active"><i class="fas fa-home"></i> Inicio</a></li>
                 
@@ -46,10 +25,62 @@
                         <i class="fas fa-leaf"></i> Productos <i class="fas fa-chevron-down ml-1"></i>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a href="vitaminas.html"><i class="fas fa-pump-soap"></i> Vitaminas</a></li>
-                        <li><a href="proteinas.html"><i class="fas fa-capsules"></i> Proteínas</a></li>
-                        <li><a href="aceites.html"><i class="fas fa-spa"></i> Aceites</a></li>
-                        <li><a href="naturales.html"><i class="fas fa-mug-hot"></i> Naturales</a></li>
+                        <li class="has-submenu">
+                            <a href="#">
+                                <span><i class="fas fa-pump-soap"></i> Vitaminas</span>
+                                <i class="fas fa-chevron-right arrow-icon"></i>
+                            </a>
+                            <ul class="submenu-inner">
+                                <li><a href="vitaminas.html">Vitaminas</a></li>
+                                <li><a href="bienestar.html">Bienestar</a></li>
+                                <li><a href="naturales.html">Naturales</a></li>
+                                <li><a href="gomitas.html">Gomitas</a></li>
+                                <li><a href="digestion.html">Digestión y Salud</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="has-submenu">
+                            <a href="#">
+                                <span><i class="fas fa-capsules"></i> Suplementos</span>
+                                <i class="fas fa-chevron-right arrow-icon"></i>
+                            </a>
+                            <ul class="submenu-inner">
+                                <li><a href="proteinas.html">Proteínas</a></li>
+                                <li><a href="aminoacidos.html">Aminoácidos</a></li>
+                                <li><a href="minerales.html">Minerales</a></li>
+                                <li><a href="colagenos.html">Colágenos</a></li>
+                                <li><a href="fibras.html">Fibras</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="has-submenu">
+                            <a href="#">
+                                <span><i class="fas fa-spa"></i> Abarrotes</span>
+                                <i class="fas fa-chevron-right arrow-icon"></i>
+                            </a>
+                            <ul class="submenu-inner">
+                                <li><a href="aceites.html">Aceites y Vinagres</a></li>
+                                <li><a href="barritas.html">Barritas Saludables</a></li>
+                                <li><a href="frutossecos.html">Frutos Secos y Cereales</a></li>
+                                <li><a href="cafe.html">Café y Cacao</a></li>
+                                <li><a href="avenas.html">Avenas</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="has-submenu">
+                            <a href="#">
+                                <span><i class="fas fa-capsules"></i> Cuidado Personal</span>
+                                <i class="fas fa-chevron-right arrow-icon"></i>
+                            </a>
+                            <ul class="submenu-inner">
+                                <li><a href="esenciales.html">Aceites Esenciales</a></li>
+                                <li><a href="cuidadofacial.html">Cuidado Facial</a></li>
+                                <li><a href="aseopersonal.html">Aseo Personal </a></li>
+                                <li><a href="cabello.html">Cuidado del Cabello</a></li>
+                            </ul>
+                        </li>
+
+                       <!--<li><a href="naturales.html"><i class="fas fa-mug-hot"></i> Naturales</a></li>-->
                     </ul>
                 </li>
 
@@ -66,68 +97,99 @@
                     </div>
                 </div>
                 <div class="menu-toggle" onclick="toggleMenu()">
-                    <div class="bar1"></div>
-                    <div class="bar2"></div>
-                    <div class="bar3"></div>
+                    <div class="bar1"></div><div class="bar2"></div><div class="bar3"></div>
                 </div>
             </div>
         </div>
     </header>
 
-    <section class="section-padding" style="padding-top: 40px;">
+    <section class="catalog-controls section-padding" style="padding-top: 40px; padding-bottom: 0;">
         <div class="container">
-            <h2 class="section-title">Vitaminas y Suplementos</h2>
+            <h2 class="section-title" style="margin-bottom: 2rem;">Fibras</h2>
             
-            <div class="grid-vitaminas">
+            <div class="controls-wrapper">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="searchInput" placeholder="Buscar producto..." onkeyup="filtrarHTML()">
+                </div>
+
+                <div class="sort-buttons">
+                    <button class="sort-btn" onclick="ordenarHTML('az')" id="btn-az"><i class="fas fa-sort-alpha-down"></i> A - Z</button>
+                    <button class="sort-btn" onclick="ordenarHTML('za')" id="btn-za"><i class="fas fa-sort-alpha-up"></i> Z - A</button>
+                    <button class="sort-btn" onclick="ordenarHTML('min')" id="btn-min"><i class="fas fa-sort-amount-down-alt"></i> Menor Precio</button>
+                    <button class="sort-btn" onclick="ordenarHTML('max')" id="btn-max"><i class="fas fa-sort-amount-up"></i> Mayor Precio</button>
+                </div>
+            </div>
+
+            <div class="results-count">
+                Mostrando <span id="product-counter">0</span> productos
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding" style="padding-top: 20px;">
+        <div class="container">
+            <div class="product-grid" id="grid-productos">
                 
                 <div class="product-card">
                     <div class="badge">Oferta</div>
-                    <div style="cursor:pointer;" onclick="openModal('Vitamina C + Zinc', 45, 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400', 'Refuerza tu sistema inmunológico con esta potente combinación antioxidante.')">
+                    <div class="card-img-container" onclick="openModal('Vitamina C + Zinc', 45.00, 55.00, 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400', 'Refuerza tu sistema inmunológico.', '100 cápsulas', '-18%')">
                         <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400" alt="Vitamina C">
                     </div>
                     <div class="p-info">
-                        <h3 style="cursor:pointer;" onclick="openModal('Vitamina C + Zinc', 45, 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400', 'Refuerza tu sistema inmunológico con esta potente combinación antioxidante.')">Vitamina C + Zinc</h3>
-                        <p class="price">S/ 45.00</p>
-                        <button class="btn-add" onclick="openModal('Vitamina C + Zinc', 45, 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400', 'Refuerza tu sistema inmunológico con esta potente combinación antioxidante.')">
+                        <h3 style="cursor:pointer;" onclick="openModal('Vitamina C + Zinc', 45.00, 55.00, 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400', 'Refuerza tu sistema inmunológico.', '100 cápsulas', '-18%')">Vitamina C + Zinc</h3>
+                        <div class="price-container">
+                            <span class="old-price">S/ 55.00</span>
+                            <span class="new-price">S/ 45.00</span>
+                        </div>
+                        <button class="btn-add" onclick="openModal('Vitamina C + Zinc', 45.00, 55.00, 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400', 'Refuerza tu sistema inmunológico.', '100 cápsulas', '-18%')">
                             Ver Opciones
                         </button>
                     </div>
                 </div>
 
                 <div class="product-card">
-                    <div style="cursor:pointer;" onclick="openModal('Complejo B Total', 55, 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=400', 'Energía natural para tu día a día. Mejora la concentración y reduce la fatiga.')">
+                    <div class="card-img-container" onclick="openModal('Complejo B Total', 55.00, 0, 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=400', 'Energía natural para tu día a día.', '60 gomitas', '')">
                         <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=400" alt="Complejo B">
                     </div>
                     <div class="p-info">
-                        <h3 style="cursor:pointer;" onclick="openModal('Complejo B Total', 55, 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=400', 'Energía natural para tu día a día. Mejora la concentración y reduce la fatiga.')">Complejo B Total</h3>
-                        <p class="price">S/ 55.00</p>
-                        <button class="btn-add" onclick="openModal('Complejo B Total', 55, 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=400', 'Energía natural para tu día a día. Mejora la concentración y reduce la fatiga.')">
+                        <h3 style="cursor:pointer;" onclick="openModal('Complejo B Total', 55.00, 0, 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=400', 'Energía natural para tu día a día.', '60 gomitas', '')">Complejo B Total</h3>
+                        <div class="price-container">
+                            <span class="new-price">S/ 55.00</span>
+                        </div>
+                        <button class="btn-add" onclick="openModal('Complejo B Total', 55.00, 0, 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=400', 'Energía natural para tu día a día.', '60 gomitas', '')">
                             Ver Opciones
                         </button>
                     </div>
                 </div>
 
                 <div class="product-card">
-                    <div style="cursor:pointer;" onclick="openModal('Colágeno Hidrolizado', 85, 'https://images.unsplash.com/photo-1550547660-d9450f859349?w=400', 'Cuida tu piel, cabello y articulaciones con nuestro colágeno premium.')">
+                    <div class="badge" style="background:var(--secondary-color);">-15%</div>
+                    <div class="card-img-container" onclick="openModal('Colágeno Hidrolizado', 85.00, 100.00, 'https://images.unsplash.com/photo-1550547660-d9450f859349?w=400', 'Cuida tu piel, cabello y articulaciones.', '300 g', '-15%')">
                         <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?w=400" alt="Colágeno">
                     </div>
                     <div class="p-info">
-                        <h3 style="cursor:pointer;" onclick="openModal('Colágeno Hidrolizado', 85, 'https://images.unsplash.com/photo-1550547660-d9450f859349?w=400', 'Cuida tu piel, cabello y articulaciones con nuestro colágeno premium.')">Colágeno Premium</h3>
-                        <p class="price">S/ 85.00</p>
-                        <button class="btn-add" onclick="openModal('Colágeno Hidrolizado', 85, 'https://images.unsplash.com/photo-1550547660-d9450f859349?w=400', 'Cuida tu piel, cabello y articulaciones con nuestro colágeno premium.')">
+                        <h3 style="cursor:pointer;" onclick="openModal('Colágeno Hidrolizado', 85.00, 100.00, 'https://images.unsplash.com/photo-1550547660-d9450f859349?w=400', 'Cuida tu piel, cabello y articulaciones.', '300 g', '-15%')">Colágeno Hidrolizado</h3>
+                        <div class="price-container">
+                            <span class="old-price">S/ 100.00</span>
+                            <span class="new-price">S/ 85.00</span>
+                        </div>
+                        <button class="btn-add" onclick="openModal('Colágeno Hidrolizado', 85.00, 100.00, 'https://images.unsplash.com/photo-1550547660-d9450f859349?w=400', 'Cuida tu piel, cabello y articulaciones.', '300 g', '-15%')">
                             Ver Opciones
                         </button>
                     </div>
                 </div>
 
                 <div class="product-card">
-                    <div style="cursor:pointer;" onclick="openModal('Magnesio Puro', 40, 'https://images.unsplash.com/photo-1585303646702-869f37943d0b?w=400', 'Ideal para el descanso nocturno y la recuperación muscular.')">
+                    <div class="card-img-container" onclick="openModal('Magnesio Puro', 40.00, 0, 'https://images.unsplash.com/photo-1585303646702-869f37943d0b?w=400', 'Ideal para el descanso nocturno.', '120 cápsulas', '')">
                         <img src="https://images.unsplash.com/photo-1585303646702-869f37943d0b?w=400" alt="Magnesio">
                     </div>
                     <div class="p-info">
-                        <h3 style="cursor:pointer;" onclick="openModal('Magnesio Puro', 40, 'https://images.unsplash.com/photo-1585303646702-869f37943d0b?w=400', 'Ideal para el descanso nocturno y la recuperación muscular.')">Magnesio Puro</h3>
-                        <p class="price">S/ 40.00</p>
-                        <button class="btn-add" onclick="openModal('Magnesio Puro', 40, 'https://images.unsplash.com/photo-1585303646702-869f37943d0b?w=400', 'Ideal para el descanso nocturno y la recuperación muscular.')">
+                        <h3 style="cursor:pointer;" onclick="openModal('Magnesio Puro', 40.00, 0, 'https://images.unsplash.com/photo-1585303646702-869f37943d0b?w=400', 'Ideal para el descanso nocturno.', '120 cápsulas', '')">Magnesio Puro</h3>
+                        <div class="price-container">
+                            <span class="new-price">S/ 40.00</span>
+                        </div>
+                        <button class="btn-add" onclick="openModal('Magnesio Puro', 40.00, 0, 'https://images.unsplash.com/photo-1585303646702-869f37943d0b?w=400', 'Ideal para el descanso nocturno.', '120 cápsulas', '')">
                             Ver Opciones
                         </button>
                     </div>
@@ -137,71 +199,52 @@
         </div>
     </section>
 
- <footer>
+    <footer>
         <div class="container footer-content">
             <div class="footer-col brand-col">
-                <a href="#" class="logo footer-logo">
-                    🌿 Primaverita <span class="highlight">Naturales</span>
-                </a>
+                <a href="#" class="logo footer-logo">🌿 Primaverita <span class="highlight">Naturals</span></a>
                 <p class="mt-3">Tu espacio de bienestar. Productos naturales seleccionados para cuidar de ti y de los tuyos en armonía con la naturaleza.</p>
             </div>
-
             <div class="footer-col contact-col">
                 <h3>Contáctanos</h3>
                 <ul class="contact-list">
-                    <li><i class="fab fa-whatsapp"></i> +51 999 999 999</li>
+                    <li><i class="fab fa-whatsapp"></i> +51 906 550 385</li>
                     <li><i class="fas fa-envelope"></i> hola@primaverita.com</li>
                     <li><i class="fas fa-map-marker-alt"></i> Lima, Perú</li>
                 </ul>
-                
-                <a href="https://wa.me/51999999999" target="_blank" class="footer-btn-wa">
-                    <i class="fab fa-whatsapp"></i> Chat directo
-                </a>
-
-                <div class="socials">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-tiktok"></i></a>
-                </div>
+                <a href="https://wa.me/51906550385" target="_blank" class="footer-btn-wa"><i class="fab fa-whatsapp"></i> Chat directo</a>
             </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 Primaverita Naturales. Todos los derechos reservados.</p>
         </div>
     </footer>
 
     <div id="cart-sidebar" class="cart-sidebar">
-        <div class="cart-header">
-            <h3>Tu Canasta 🌿</h3>
-            <span class="close-cart" onclick="toggleCart()">&times;</span>
-        </div>
-        <div class="cart-items" id="cart-items">
-            <p class="empty-msg">Tu carrito está vacío</p>
-        </div>
+        <div class="cart-header"><h3>Tu Canasta 🌿</h3><span class="close-cart" onclick="toggleCart()">&times;</span></div>
+        <div class="cart-items" id="cart-items"><p class="empty-msg">Tu carrito está vacío</p></div>
         <div class="cart-footer">
             <div class="total">Total: S/ <span id="cart-total">0.00</span></div>
-            <button class="btn-whatsapp" onclick="checkoutWhatsApp()">
-                <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
-            </button>
+            <button class="btn-whatsapp" onclick="checkoutWhatsApp()"><i class="fab fa-whatsapp"></i> Pedir por WhatsApp</button>
         </div>
     </div>
     <div id="overlay" class="overlay" onclick="toggleCart()"></div>
 
     <div id="productModal" class="modal-overlay">
         <div class="modal-content">
-            <span class="close-modal" onclick="closeModal()">&times;</span>
             <div class="modal-body">
                 <div class="modal-img-container">
+                    <span id="m-discount" class="modal-badge">-10%</span>
                     <img id="m-img" src="" alt="Producto">
                 </div>
                 <div class="modal-info">
+                    <span class="close-modal" onclick="closeModal()">&times;</span>
                     <h2 id="m-title">Nombre Producto</h2>
                     <p id="m-desc" class="modal-description">...</p>
+                    <p class="modal-size"><strong>Tamaño:</strong> <span id="m-size">0 ml</span></p>
                     <div class="modal-price-box">
-                        <span class="currency">S/</span><span id="m-price">0.00</span>
+                        <span id="m-old-price" class="m-old-price">S/ 0.00</span>
+                        <div class="m-new-price"><span class="currency">S/</span> <span id="m-price">0.00</span></div>
                     </div>
                     <div class="qty-selector">
-                        <span>Cantidad:</span>
+                        <span style="font-weight: 600; color: #444;">Cantidad:</span>
                         <div class="qty-controls">
                             <button onclick="updateModalQty(-1)">-</button>
                             <input type="number" id="m-qty" value="1" readonly>
@@ -209,12 +252,8 @@
                         </div>
                     </div>
                     <div class="modal-buttons">
-                        <button class="btn-modal-cart" onclick="addFromModalToCart()">
-                            <i class="fas fa-shopping-basket"></i> Agregar al Carrito
-                        </button>
-                        <button class="btn-modal-wa" onclick="buyNowWhatsApp()">
-                            <i class="fab fa-whatsapp"></i> Comprar ahora
-                        </button>
+                        <button class="btn-modal-cart" onclick="addFromModalToCart()"><i class="fas fa-shopping-basket"></i> Agregar al Carrito</button>
+                        <button class="btn-modal-wa" onclick="buyNowWhatsApp()"><i class="fab fa-whatsapp"></i> Comprar ahora</button>
                     </div>
                 </div>
             </div>

@@ -280,7 +280,7 @@ footer { background: #0a1f12; color: #e0e0e0; padding-top: 5rem; font-family: va
     }
     
     .tips-grid, .testimonial-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.5rem; }
-    .section-padding { padding: 6rem 5%; }
+    .section-padding { padding: 2rem 5%; }
 }
 
 /* =========================================
@@ -371,6 +371,7 @@ footer { background: #0a1f12; color: #e0e0e0; padding-top: 5rem; font-family: va
         width: 100% !important;
         box-sizing: border-box !important;
     }
+    .section-padding { padding: 1.5rem 0 !important; }
     .product-card { width: 100% !important; min-width: 0 !important; }
     .card-img-container { height: 130px !important; }
     
@@ -416,4 +417,91 @@ footer { background: #0a1f12; color: #e0e0e0; padding-top: 5rem; font-family: va
 @media (max-width: 400px) {
     .logo { font-size: 1.05rem !important; }
     .card-img-container { height: 110px !important; }
+}
+/* =========================================
+   SECCIÓN DE VALORES / GARANTÍAS
+   ========================================= */
+.features-section {
+    background-color: var(--surface-color); /* Fondo blanco o suave */
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    text-align: center;
+}
+
+.feature-box {
+    padding: 30px 20px;
+    background: var(--bg-color);
+    border-radius: 20px;
+    transition: transform 0.3s ease;
+    border: 1px solid rgba(0,0,0,0.03);
+}
+
+.feature-box:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+    background: white;
+}
+
+.icon-circle {
+    width: 70px;
+    height: 70px;
+    background: rgba(46, 125, 50, 0.1); /* Verde suave transparente */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 20px;
+    color: var(--secondary-color);
+    font-size: 1.8rem;
+    transition: 0.3s;
+}
+
+.feature-box:hover .icon-circle {
+    background: var(--secondary-color);
+    color: white;
+}
+
+.feature-box h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.feature-box p {
+    font-size: 0.95rem;
+    color: var(--light-text);
+    line-height: 1.6;
+}
+/* =========================================
+   PARCHE PARA QUE LAS IMÁGENES PNG ENCAJEN PERFECTO
+   ========================================= */
+
+/* 1. Para los productos (Hace que el frasco/caja se vea entero sin cortarse) */
+.card-img-container img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important; 
+    padding: 20px !important; /* Le da un espacio a los lados para que no choque con los bordes */
+    background-color: #fdfdfd; /* Fondo blanquito por si tu PNG es transparente */
+}
+
+/* 2. Para las tarjetas del Blog (Rellena el cuadro como una foto normal) */
+.tip-card img {
+    width: 100% !important;
+    height: 240px !important;
+    object-fit: cover !important; 
+}
+
+/* 3. Para la imagen dentro de la ventana grande (Modal) */
+.modal-img-container img {
+    width: 100% !important;
+    height: 100% !important;
+    max-height: 350px !important;
+    object-fit: contain !important;
+    padding: 20px !important;
 }

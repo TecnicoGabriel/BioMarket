@@ -16,26 +16,78 @@
                 🌿 Primaverita <span class="highlight">Naturals</span>
             </a>
 
-            <nav class="navbar">
-                <ul class="nav-links" id="navLinks">
-                    <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
-                    
-                    <li class="dropdown active" id="productosDropdown">
-                        <a href="#" onclick="toggleSubmenu(event)">
-                            <i class="fas fa-leaf"></i> Productos <i class="fas fa-chevron-down ml-1"></i>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a href="vitaminas.html" style="color:var(--primary-color); font-weight:bold;"><i class="fas fa-pump-soap"></i> Vitaminas</a></li>
-                            <li><a href="proteinas.html"><i class="fas fa-capsules"></i> Proteínas</a></li>
-                            <li><a href="aceites.html"><i class="fas fa-spa"></i> Aceites</a></li>
-                            <li><a href="naturales.html"><i class="fas fa-mug-hot"></i> Naturales</a></li>
-                        </ul>
-                    </li>
+           <nav class="navbar">
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" class="active"><i class="fas fa-home"></i> Inicio</a></li>
+                
+                <li class="dropdown" id="productosDropdown">
+                    <a href="#" onclick="toggleSubmenu(event)">
+                        <i class="fas fa-leaf"></i> Productos <i class="fas fa-chevron-down ml-1"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li class="has-submenu">
+                            <a href="#">
+                                <span><i class="fas fa-pump-soap"></i> Vitaminas</span>
+                                <i class="fas fa-chevron-right arrow-icon"></i>
+                            </a>
+                            <ul class="submenu-inner">
+                                <li><a href="vitaminas.html">Vitaminas</a></li>
+                                <li><a href="bienestar.html">Bienestar</a></li>
+                                <li><a href="naturales.html">Naturales</a></li>
+                                <li><a href="gomitas.html">Gomitas</a></li>
+                                <li><a href="digestion.html">Digestión y Salud</a></li>
+                            </ul>
+                        </li>
 
-                    <li><a href="nosotros.html"><i class="fas fa-users"></i> Nosotros</a></li>
-                    <li><a href="blog.html"><i class="fas fa-feather-alt"></i> Blog</a></li>
-                </ul>
-            </nav>
+                        <li class="has-submenu">
+                            <a href="#">
+                                <span><i class="fas fa-capsules"></i> Suplementos</span>
+                                <i class="fas fa-chevron-right arrow-icon"></i>
+                            </a>
+                            <ul class="submenu-inner">
+                                <li><a href="proteinas.html">Proteínas</a></li>
+                                <li><a href="aminoacidos.html">Aminoácidos</a></li>
+                                <li><a href="minerales.html">Minerales</a></li>
+                                <li><a href="colagenos.html">Colágenos</a></li>
+                                <li><a href="fibras.html">Fibras</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="has-submenu">
+                            <a href="#">
+                                <span><i class="fas fa-spa"></i> Abarrotes</span>
+                                <i class="fas fa-chevron-right arrow-icon"></i>
+                            </a>
+                            <ul class="submenu-inner">
+                                <li><a href="aceites.html">Aceites y Vinagres</a></li>
+                                <li><a href="barritas.html">Barritas Saludables</a></li>
+                                <li><a href="frutossecos.html">Frutos Secos y Cereales</a></li>
+                                <li><a href="cafe.html">Café y Cacao</a></li>
+                                <li><a href="avenas.html">Avenas</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="has-submenu">
+                            <a href="#">
+                                <span><i class="fas fa-capsules"></i> Cuidado Personal</span>
+                                <i class="fas fa-chevron-right arrow-icon"></i>
+                            </a>
+                            <ul class="submenu-inner">
+                                <li><a href="esenciales.html">Aceites Esenciales</a></li>
+                                <li><a href="cuidadofacial.html">Cuidado Facial</a></li>
+                                <li><a href="aseopersonal.html">Aseo Personal </a></li>
+                                <li><a href="cabello.html">Cuidado del Cabello</a></li>
+                            </ul>
+                        </li>
+
+                       <!--<li><a href="naturales.html"><i class="fas fa-mug-hot"></i> Naturales</a></li>-->
+                    </ul>
+                </li>
+
+                <li><a href="nosotros.html"><i class="fas fa-users"></i> Nosotros</a></li>
+                <li><a href="blog.html"><i class="fas fa-feather-alt"></i> Blog</a></li>
+            </ul>
+        </nav>
 
             <div class="header-icons">
                 <div class="cart-icon" onclick="toggleCart()">
@@ -53,7 +105,7 @@
 
     <section class="catalog-controls section-padding" style="padding-top: 40px; padding-bottom: 0;">
         <div class="container">
-            <h2 class="section-title" style="margin-bottom: 2rem;">Vitaminas y Suplementos</h2>
+            <h2 class="section-title" style="margin-bottom: 2rem;">Vitaminas</h2>
             
             <div class="controls-wrapper">
                 <div class="search-box">
@@ -81,16 +133,16 @@
                 
                 <div class="product-card">
                     <div class="badge">Oferta</div>
-                    <div class="card-img-container" onclick="openModal('Vitamina C + Zinc', 45.00, 55.00, 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400', 'Refuerza tu sistema inmunológico.', '100 cápsulas', '-18%')">
-                        <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400" alt="Vitamina C">
+                    <div class="card-img-container" onclick="openModal('MAXIMUM OMEGA 3 ANTARTIC OIL LAB NUTRITION X60CAPSULAS', 135.20, 170, 'img/vi1.png', '100 cápsulas', '-18%')">
+                        <img src="img/vi1.png" alt="Vitamina C">
                     </div>
                     <div class="p-info">
-                        <h3 style="cursor:pointer;" onclick="openModal('Vitamina C + Zinc', 45.00, 55.00, 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400', 'Refuerza tu sistema inmunológico.', '100 cápsulas', '-18%')">Vitamina C + Zinc</h3>
+                        <h3 style="cursor:pointer;" onclick="openModal('MAXIMUM OMEGA 3 ANTARTIC OIL LAB NUTRITION X60CAPSULAS', 135.20, 170, 'img/vi1.png', 'Refuerza tu sistema inmunológico.', '100 cápsulas', '-18%')">MAXIMUM OMEGA 3 ANTARTIC OIL LAB NUTRITION X60CAPSULAS</h3>
                         <div class="price-container">
-                            <span class="old-price">S/ 55.00</span>
-                            <span class="new-price">S/ 45.00</span>
+                            <span class="old-price">S/ 170.00</span>
+                            <span class="new-price">S/ 135.20</span>
                         </div>
-                        <button class="btn-add" onclick="openModal('Vitamina C + Zinc', 45.00, 55.00, 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400', 'Refuerza tu sistema inmunológico.', '100 cápsulas', '-18%')">
+                        <button class="btn-add" onclick="openModal('MAXIMUM OMEGA 3 ANTARTIC OIL LAB NUTRITION X60CAPSULAS', 135.20, 170, 'img/vi1.png', 'Refuerza tu sistema inmunológico.', '100 cápsulas', '-18%')">
                             Ver Opciones
                         </button>
                     </div>
@@ -98,7 +150,7 @@
 
                 <div class="product-card">
                     <div class="card-img-container" onclick="openModal('Complejo B Total', 55.00, 0, 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=400', 'Energía natural para tu día a día.', '60 gomitas', '')">
-                        <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=400" alt="Complejo B">
+                        <img src="img/vi1.png" alt="Complejo B">
                     </div>
                     <div class="p-info">
                         <h3 style="cursor:pointer;" onclick="openModal('Complejo B Total', 55.00, 0, 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=400', 'Energía natural para tu día a día.', '60 gomitas', '')">Complejo B Total</h3>
@@ -156,11 +208,11 @@
             <div class="footer-col contact-col">
                 <h3>Contáctanos</h3>
                 <ul class="contact-list">
-                    <li><i class="fab fa-whatsapp"></i> +51 999 999 999</li>
+                    <li><i class="fab fa-whatsapp"></i> +51 906 550 385</li>
                     <li><i class="fas fa-envelope"></i> hola@primaverita.com</li>
                     <li><i class="fas fa-map-marker-alt"></i> Lima, Perú</li>
                 </ul>
-                <a href="https://wa.me/51999999999" target="_blank" class="footer-btn-wa"><i class="fab fa-whatsapp"></i> Chat directo</a>
+                <a href="https://wa.me/51906550385" target="_blank" class="footer-btn-wa"><i class="fab fa-whatsapp"></i> Chat directo</a>
             </div>
         </div>
     </footer>

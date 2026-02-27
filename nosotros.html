@@ -5,17 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Primaverita Naturals | Nuestra Esencia</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/movil.css">
     
     <style>
-        /* --- ESTILOS EXCLUSIVOS PARA "NOSOTROS" --- */
+        /* =========================================
+           ESTILOS EXCLUSIVOS: NOSOTROS (PREMIUM)
+           ========================================= */
         
-        /* Hero con Parallax Suave */
+        /* 1. HERO SECTION */
         .nosotros-hero {
-            height: 450px;
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+            height: 55vh;
+            min-height: 400px;
+            background: linear-gradient(rgba(15, 76, 40, 0.6), rgba(15, 76, 40, 0.4)), 
                         url('https://images.unsplash.com/photo-1540420773420-3366772f4999?q=80&w=1920');
             background-attachment: fixed;
             background-size: cover;
@@ -25,98 +27,220 @@
             justify-content: center;
             text-align: center;
             color: white;
+            padding: 0 20px;
         }
-        .hero-title h1 { font-family: 'Playfair Display', serif; font-size: 4rem; margin-bottom: 10px; }
-        .hero-title p { font-size: 1.2rem; letter-spacing: 2px; text-transform: uppercase; }
+        .hero-title h1 { 
+            font-family: 'Playfair Display', serif; 
+            font-size: 4.5rem; 
+            margin-bottom: 15px; 
+            color: white;
+            text-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+        .hero-title p { 
+            font-size: 1.2rem; 
+            letter-spacing: 3px; 
+            text-transform: uppercase; 
+            font-weight: 500;
+            opacity: 0.9;
+        }
 
-        /* Contenedor de Historia Asimétrico */
+        /* 2. HISTORIA (DISEÑO COLLAGE) */
+        .historia-section { padding: 100px 5%; background: var(--bg-color); overflow: hidden; }
         .historia-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 60px;
             align-items: center;
-            padding: 100px 0;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
-        .img-stack {
-            position: relative;
-            padding: 20px;
-        }
-        .img-stack img {
+        /* Collage de imágenes */
+        .collage-wrapper { position: relative; padding-right: 40px; padding-bottom: 40px; }
+        .collage-img-main {
             width: 85%;
             border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            box-shadow: var(--shadow-lg);
+            position: relative;
+            z-index: 2;
         }
-        .img-stack::after {
-            content: "";
+        .collage-img-sub {
             position: absolute;
-            top: 60px; right: 0;
-            width: 250px; height: 300px;
-            background: var(--secondary-color);
-            z-index: -1;
+            bottom: 0;
+            right: 0;
+            width: 55%;
             border-radius: 20px;
-            opacity: 0.2;
+            border: 8px solid var(--bg-color);
+            box-shadow: var(--shadow-md);
+            z-index: 3;
+        }
+        .collage-bg {
+            position: absolute;
+            top: -20px; left: -20px;
+            width: 60%; height: 70%;
+            background: #eef7ee;
+            border-radius: 20px;
+            z-index: 1;
         }
 
-        .text-content h2 { 
-            font-family: 'Playfair Display', serif; 
-            font-size: 3rem; 
-            color: var(--primary-color);
-            margin-bottom: 25px;
+        .text-content .subtitle {
+            color: var(--accent-color);
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            display: block;
+            margin-bottom: 10px;
         }
-        .text-content p { color: #555; line-height: 1.8; margin-bottom: 20px; font-size: 1.1rem; }
+        .text-content h2 { font-size: 3rem; margin-bottom: 25px; line-height: 1.2; }
+        .text-content p { color: var(--light-text); line-height: 1.8; margin-bottom: 20px; font-size: 1.05rem; }
 
-        /* Sección de Propósitos con Iconos Flotantes */
-        .proposito-section {
-            background: #f4f9f4;
-            padding: 80px 0;
-            border-radius: 50px 50px 0 0;
-        }
+        /* 3. PILARES (CARDS FLOTANTES) */
+        .proposito-section { background: #f4f9f4; padding: 100px 5%; }
+        .proposito-header { text-align: center; max-width: 700px; margin: 0 auto 50px; }
+        .proposito-header h2 { font-size: 2.8rem; margin-bottom: 15px; }
+        .proposito-header p { color: var(--light-text); font-size: 1.1rem; }
+
         .cards-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
-            margin-top: 50px;
+            max-width: 1200px;
+            margin: 0 auto;
         }
         .card-nosotros {
-            background: white;
-            padding: 40px;
-            border-radius: 20px;
-            text-align: center;
-            transition: all 0.4s ease;
-            border: 1px solid transparent;
+            background: white; padding: 50px 30px; border-radius: 20px;
+            text-align: center; transition: var(--transition);
+            box-shadow: var(--shadow-sm); border-bottom: 4px solid transparent;
         }
         .card-nosotros:hover {
-            transform: translateY(-15px);
-            border-color: var(--secondary-color);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+            transform: translateY(-10px); box-shadow: var(--shadow-lg); border-bottom-color: var(--secondary-color);
         }
-        .card-nosotros i {
-            font-size: 3rem;
-            color: var(--accent-color);
-            margin-bottom: 20px;
+        .card-icon-wrapper {
+            width: 80px; height: 80px; background: #eef7ee; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 25px; transition: var(--transition);
         }
+        .card-nosotros i { font-size: 2rem; color: var(--secondary-color); }
+        .card-nosotros:hover .card-icon-wrapper { background: var(--secondary-color); }
+        .card-nosotros:hover i { color: white; }
+        
+        .card-nosotros h3 { font-size: 1.4rem; color: var(--dark-text); margin-bottom: 15px; font-family: var(--font-body); font-weight: 600;}
+        .card-nosotros p { color: var(--light-text); line-height: 1.6; font-size: 0.95rem; }
 
-        /* Banner de confianza */
+        /* 4. SECCIÓN COMPROMISO (REVERSO) */
+        .compromiso-section { padding: 100px 5%; background: white; }
+        .compromiso-grid {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 60px;
+            align-items: center; max-width: 1200px; margin: 0 auto;
+        }
+        .compromiso-img { width: 100%; border-radius: 20px; box-shadow: var(--shadow-md); }
+        
+        .check-list { margin-top: 25px; }
+        .check-list li { margin-bottom: 15px; display: flex; align-items: center; gap: 15px; font-size: 1.05rem; color: var(--dark-text); }
+        .check-list i { color: var(--accent-color); font-size: 1.2rem; }
+
+        /* 5. BANNER DE CONFIANZA Y CTA */
         .trust-banner {
-            padding: 60px 0;
-            text-align: center;
-            background: var(--primary-color);
-            color: white;
+            padding: 80px 5%; text-align: center; background: var(--primary-color);
+            color: white; position: relative;
+        }
+        .trust-banner::before {
+            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background-image: radial-gradient(rgba(255,255,255,0.1) 2px, transparent 2px);
+            background-size: 30px 30px; opacity: 0.5;
         }
         .trust-stats {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            gap: 30px;
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px;
+            max-width: 1000px; margin: 0 auto 50px; position: relative; z-index: 2;
         }
-        .stat-item h3 { font-size: 2.5rem; color: var(--accent-color); }
+        .stat-item h3 { font-size: 3.5rem; color: var(--accent-color); margin-bottom: 5px; font-family: var(--font-title); }
+        .stat-item p { font-size: 1.1rem; opacity: 0.9; font-weight: 300; }
+        
+        .cta-final { position: relative; z-index: 2; margin-top: 40px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 40px; }
+        .cta-final h4 { color: white; font-size: 1.8rem; margin-bottom: 20px; }
+        .btn-white {
+            background: white; color: var(--primary-color); padding: 15px 40px;
+            border-radius: 50px; font-weight: 600; font-size: 1.1rem;
+            display: inline-block; transition: var(--transition);
+        }
+        .btn-white:hover { background: var(--accent-color); color: white; transform: translateY(-3px); }
 
-        /* Responsive */
+        /* =========================================
+           📱 RESPONSIVE MÓVIL ESTRICTO (ESTÉTICA MEJORADA)
+           ========================================= */
         @media (max-width: 900px) {
-            .historia-grid { grid-template-columns: 1fr; text-align: center; }
-            .hero-title h1 { font-size: 2.5rem; }
-            .img-stack img { width: 100%; }
+            /* Ajustes Generales */
+            .historia-section, .proposito-section, .compromiso-section { padding: 50px 5%; }
+            .hero-title h1 { font-size: 2.8rem; }
+            .hero-title p { font-size: 0.9rem; letter-spacing: 2px; }
+            
+            /* Grillas a 1 columna para textos e imágenes */
+            .historia-grid, .compromiso-grid { grid-template-columns: 1fr; gap: 40px; }
+            
+            /* Invertir orden en Compromiso (Foto arriba) */
+            .compromiso-grid .text-content { order: 2; }
+            .compromiso-grid .compromiso-img { order: 1; }
+
+            /* Ajustes Textos (Alineados a la izquierda para mejor lectura en móvil) */
+            .text-content { text-align: left; }
+            .text-content h2 { font-size: 2rem; margin-bottom: 15px; }
+            .text-content p { font-size: 0.95rem; margin-bottom: 15px; }
+            .check-list li { font-size: 0.95rem; align-items: flex-start; }
+
+            /* Collage proporcionado */
+            .collage-wrapper { padding-right: 20px; padding-bottom: 20px; margin: 0 auto; max-width: 350px; }
+            .collage-img-main { width: 85%; }
+            .collage-img-sub { width: 65%; }
+            
+            /* Títulos centrados solo para cabeceras de sección */
+            .proposito-header h2 { font-size: 2rem; }
+            .proposito-header p { font-size: 0.95rem; }
+
+            /* 🎯 MAGIA: CAJAS (PILARES) DE 2 EN 2 EN MÓVIL */
+            .cards-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+            .card-nosotros {
+                padding: 25px 15px; /* Menos padding interno */
+            }
+            .card-icon-wrapper {
+                width: 50px; height: 50px; /* Icono más pequeño */
+                margin-bottom: 15px;
+            }
+            .card-nosotros i { font-size: 1.3rem; }
+            .card-nosotros h3 { font-size: 1.1rem; margin-bottom: 10px; }
+            .card-nosotros p { font-size: 0.8rem; line-height: 1.4; }
+            
+            /* El tercer pilar (impar) se centra ocupando las 2 columnas */
+            .card-nosotros:last-child:nth-child(odd) {
+                grid-column: 1 / -1;
+            }
+
+            /* 🎯 MAGIA: ESTADÍSTICAS EN 2 COLUMNAS MÓVIL */
+            .trust-banner { padding: 50px 5%; }
+            .trust-stats {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 25px 10px;
+                margin-bottom: 30px;
+            }
+            .stat-item h3 { font-size: 2.2rem; }
+            .stat-item p { font-size: 0.85rem; }
+            
+            /* La tercera estadística (Año) se centra ocupando todo el ancho */
+            .stat-item:last-child:nth-child(odd) {
+                grid-column: 1 / -1;
+            }
+
+            .cta-final h4 { font-size: 1.4rem; }
+            .btn-white { padding: 12px 30px; font-size: 1rem; width: 100%; }
+        }
+
+        /* Pantallas muy pequeñas */
+        @media (max-width: 400px) {
+            .cards-grid { grid-template-columns: 1fr; } /* Si el celular es minúsculo, baja a 1 */
+            .trust-stats { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -128,26 +252,79 @@
                 🌿 Primaverita <span class="highlight">Naturals</span>
             </a>
 
-            <nav class="navbar">
-                <ul class="nav-links" id="navLinks">
-                    <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
-                    
-                    <li class="dropdown" id="productosDropdown">
-                        <a href="#" onclick="toggleSubmenu(event)">
-                            <i class="fas fa-leaf"></i> Productos <i class="fas fa-chevron-down ml-1"></i>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a href="vitaminas.html"><i class="fas fa-pump-soap"></i> Vitaminas</a></li>
-                            <li><a href="proteinas.html"><i class="fas fa-capsules"></i> Proteínas</a></li>
-                            <li><a href="aceites.html"><i class="fas fa-spa"></i> Aceites</a></li>
-                            <li><a href="naturales.html"><i class="fas fa-mug-hot"></i> Naturales</a></li>
-                        </ul>
-                    </li>
+           <nav class="navbar">
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" class="active"><i class="fas fa-home"></i> Inicio</a></li>
+                
+                <li class="dropdown" id="productosDropdown">
+                    <a href="#" onclick="toggleSubmenu(event)">
+                        <i class="fas fa-leaf"></i> Productos <i class="fas fa-chevron-down ml-1"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li class="has-submenu">
+                            <a href="#">
+                                <span><i class="fas fa-pump-soap"></i> Vitaminas</span>
+                                <i class="fas fa-chevron-right arrow-icon"></i>
+                            </a>
+                            <ul class="submenu-inner">
+                                <li><a href="vitaminas.html">Vitaminas</a></li>
+                                <li><a href="bienestar.html">Bienestar</a></li>
+                                <li><a href="naturales.html">Naturales</a></li>
+                                <li><a href="gomitas.html">Gomitas</a></li>
+                                <li><a href="digestion.html">Digestión y Salud</a></li>
+                            </ul>
+                        </li>
 
-                    <li><a href="nosotros.html" class="active"><i class="fas fa-users"></i> Nosotros</a></li>
-                    <li><a href="blog.html"><i class="fas fa-feather-alt"></i> Blog</a></li>
-                </ul>
-            </nav>
+                        <li class="has-submenu">
+                            <a href="#">
+                                <span><i class="fas fa-capsules"></i> Suplementos</span>
+                                <i class="fas fa-chevron-right arrow-icon"></i>
+                            </a>
+                            <ul class="submenu-inner">
+                                <li><a href="proteinas.html">Proteínas</a></li>
+                                <li><a href="aminoacidos.html">Aminoácidos</a></li>
+                                <li><a href="minerales.html">Minerales</a></li>
+                                <li><a href="colagenos.html">Colágenos</a></li>
+                                <li><a href="fibras.html">Fibras</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="has-submenu">
+                            <a href="#">
+                                <span><i class="fas fa-spa"></i> Abarrotes</span>
+                                <i class="fas fa-chevron-right arrow-icon"></i>
+                            </a>
+                            <ul class="submenu-inner">
+                                <li><a href="aceites.html">Aceites y Vinagres</a></li>
+                                <li><a href="barritas.html">Barritas Saludables</a></li>
+                                <li><a href="frutossecos.html">Frutos Secos y Cereales</a></li>
+                                <li><a href="cafe.html">Café y Cacao</a></li>
+                                <li><a href="avenas.html">Avenas</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="has-submenu">
+                            <a href="#">
+                                <span><i class="fas fa-capsules"></i> Cuidado Personal</span>
+                                <i class="fas fa-chevron-right arrow-icon"></i>
+                            </a>
+                            <ul class="submenu-inner">
+                                <li><a href="esenciales.html">Aceites Esenciales</a></li>
+                                <li><a href="cuidadofacial.html">Cuidado Facial</a></li>
+                                <li><a href="aseopersonal.html">Aseo Personal </a></li>
+                                <li><a href="cabello.html">Cuidado del Cabello</a></li>
+                            </ul>
+                        </li>
+
+                       <!--<li><a href="naturales.html"><i class="fas fa-mug-hot"></i> Naturales</a></li>-->
+                    </ul>
+                </li>
+
+                <li><a href="nosotros.html"><i class="fas fa-users"></i> Nosotros</a></li>
+                <li><a href="blog.html"><i class="fas fa-feather-alt"></i> Blog</a></li>
+            </ul>
+        </nav>
+            
             <div class="header-icons">
                 <div class="cart-icon" onclick="toggleCart()">
                     <div class="cart-btn">
@@ -166,62 +343,94 @@
         <section class="nosotros-hero">
             <div class="hero-title">
                 <h1>Nuestra Esencia</h1>
-                <p>Bienestar natural desde el corazón de Lima</p>
+                <p>Bienestar puro, directo de la naturaleza</p>
             </div>
         </section>
 
-        <section class="container">
+        <section class="historia-section">
             <div class="historia-grid">
-                <div class="img-stack">
-                    <img src="https://images.unsplash.com/photo-1556911220-e150213ff167?w=800" alt="Producción Natural">
+                <div class="collage-wrapper">
+                    <div class="collage-bg"></div>
+                    <img src="https://images.unsplash.com/photo-1556911220-e150213ff167?w=800" alt="Producción Natural" class="collage-img-main">
+                    <img src="https://images.unsplash.com/photo-1611078508466-9a250325ff2a?w=400" alt="Ingredientes" class="collage-img-sub">
                 </div>
                 <div class="text-content">
-                    <h2>Más que una tienda, un estilo de vida</h2>
-                    <p>En <strong>Primaverita Naturals</strong>, creemos que la naturaleza posee la sabiduría necesaria para sanar y fortalecer nuestro cuerpo. Lo que comenzó como un pequeño emprendimiento familiar en Independencia, se ha convertido en el puente entre la pureza de la tierra y tu bienestar diario.</p>
-                    <p>Seleccionamos cada producto bajo estándares rigurosos, asegurándonos de que cada vitamina, aceite o proteína que llega a tus manos sea honesta, pura y efectiva.</p>
+                    <span class="subtitle">Nuestra Historia</span>
+                    <h2>Más que una tienda, un estilo de vida consciente</h2>
+                    <p>En <strong>Primaverita Naturals</strong>, creemos profundamente que la naturaleza posee la sabiduría exacta para sanar, nutrir y fortalecer nuestro cuerpo desde adentro hacia afuera.</p>
+                    <p>Lo que comenzó como una pequeña iniciativa familiar en el corazón de Lima, hoy se ha convertido en el puente de confianza entre la pureza de la tierra y tu bienestar diario. Cada producto que llega a tus manos cuenta una historia de respeto por la naturaleza.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="compromiso-section">
+            <div class="compromiso-grid">
+                <div class="text-content">
+                    <span class="subtitle">Lo que nos define</span>
+                    <h2>Cuidamos cada detalle de tu salud</h2>
+                    <p>No somos un catálogo inmenso de productos al azar. Seleccionamos rigurosamente cada vitamina, aceite esencial y suplemento, asegurándonos de que cumplan con los más altos estándares de pureza y eficacia.</p>
+                    <ul class="check-list">
+                        <li><i class="fas fa-check-circle"></i> Libre de químicos agresivos y parabenos.</li>
+                        <li><i class="fas fa-check-circle"></i> Proveedores responsables y sostenibles.</li>
+                        <li><i class="fas fa-check-circle"></i> Asesoría honesta y transparente para ti.</li>
+                    </ul>
+                </div>
+                <div>
+                    <img src="https://images.unsplash.com/photo-1512069772995-ec65ed45afd6?w=800" alt="Cuidado Natural" class="compromiso-img">
                 </div>
             </div>
         </section>
 
         <section class="proposito-section">
-            <div class="container">
-                <div style="text-align: center; margin-bottom: 50px;">
-                    <h2 style="font-family: 'Playfair Display'; font-size: 2.5rem; color: var(--primary-color);">Nuestros Pilares</h2>
-                </div>
-                <div class="cards-grid">
-                    <div class="card-nosotros">
+            <div class="proposito-header">
+                <h2>Nuestros Pilares</h2>
+                <p>Las bases sobre las que construimos todo lo que hacemos en Primaverita.</p>
+            </div>
+            
+            <div class="cards-grid">
+                <div class="card-nosotros">
+                    <div class="card-icon-wrapper">
                         <i class="fas fa-seedling"></i>
-                        <h3>Origen Ético</h3>
-                        <p>Trabajamos directamente con productores que respetan los ciclos naturales y el suelo peruano.</p>
                     </div>
-                    <div class="card-nosotros">
+                    <h3>Origen Ético</h3>
+                    <p>Respetamos los ciclos naturales y trabajamos con insumos que honran la tierra.</p>
+                </div>
+                <div class="card-nosotros">
+                    <div class="card-icon-wrapper">
                         <i class="fas fa-hand-holding-heart"></i>
-                        <h3>Cuidado Real</h3>
-                        <p>No vendemos productos, ofrecemos soluciones para que te sientas con energía y plenitud cada día.</p>
                     </div>
-                    <div class="card-nosotros">
-                        <i class="fas fa-shield-alt"></i>
-                        <h3>Calidad Certificada</h3>
-                        <p>Todo lo que encuentras aquí ha sido probado y seleccionado por su alto valor nutricional.</p>
+                    <h3>Cuidado Real</h3>
+                    <p>No vendemos por vender; te ofrecemos soluciones para vivir con plenitud.</p>
+                </div>
+                <div class="card-nosotros">
+                    <div class="card-icon-wrapper">
+                        <i class="fas fa-certificate"></i>
                     </div>
+                    <h3>Calidad Superior</h3>
+                    <p>Verificamos cada producto para garantizar su alto valor nutricional.</p>
                 </div>
             </div>
         </section>
 
         <section class="trust-banner">
-            <div class="container trust-stats">
+            <div class="trust-stats">
                 <div class="stat-item">
-                    <h3>+100</h3>
+                    <h3>+150</h3>
                     <p>Productos Naturales</p>
                 </div>
                 <div class="stat-item">
                     <h3>5000+</h3>
-                    <p>Clientes Felices</p>
+                    <p>Clientes Satisfechos</p>
                 </div>
                 <div class="stat-item">
                     <h3>2020</h3>
-                    <p>Desde nuestra fundación</p>
+                    <p>Año de Fundación</p>
                 </div>
+            </div>
+            
+            <div class="cta-final">
+                <h4>¿Listo para transformar tu rutina diaria?</h4>
+                <a href="index.html#productos" class="btn-white">Explorar Productos <i class="fas fa-arrow-right ml-1"></i></a>
             </div>
         </section>
     </main>
