@@ -10,33 +10,17 @@
     
     <style>
         /* =========================================
-           VARIABLES DE RESPALDO (Por si fallan en styles.css)
-           ========================================= */
-        :root {
-            --primary-color: #0f4c28;
-            --secondary-color: #2e8b57;
-            --accent-color: #4cae4c;
-            --bg-color: #f9fbf9;
-            --dark-text: #2c3e50;
-            --light-text: #556b2f;
-            --shadow-sm: 0 4px 15px rgba(0,0,0,0.03);
-            --shadow-md: 0 10px 25px rgba(0,0,0,0.08);
-            --shadow-lg: 0 20px 40px rgba(0,0,0,0.12);
-            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-            --font-title: 'Playfair Display', serif;
-            --font-body: 'Poppins', sans-serif;
-        }
-
-        /* =========================================
-           ESTILOS EXCLUSIVOS: NOSOTROS (PREMIUM)
+           ESTILOS EXCLUSIVOS: NOSOTROS (COMPACTO)
+           * No se tocan variables globales para proteger tu Header/Footer *
            ========================================= */
         
         /* 1. HERO SECTION */
         .nosotros-hero {
-            height: 60vh;
-            min-height: 400px;
-            background: linear-gradient(rgba(15, 76, 40, 0.65), rgba(15, 76, 40, 0.45)), 
-                        url('https://images.unsplash.com/photo-1540420773420-3366772f4999?q=80&w=1920');
+            height: 45vh; 
+            min-height: 350px;
+            /* Imagen de fondo nueva: más natural, limpia y bionatural */
+            background: linear-gradient(rgba(15, 76, 40, 0.75), rgba(15, 76, 40, 0.6)), 
+                        url('https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?q=80&w=1920');
             background-attachment: fixed;
             background-size: cover;
             background-position: center;
@@ -47,253 +31,205 @@
             color: white;
             padding: 0 20px;
         }
-        
-        @keyframes fadeUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .hero-title {
-            animation: fadeUp 1s ease-out forwards;
-        }
-
         .hero-title h1 { 
-            font-family: var(--font-title); 
-            font-size: 4.8rem; 
-            margin-bottom: 15px; 
+            font-family: 'Playfair Display', serif; 
+            font-size: 3.5rem; 
+            margin-bottom: 5px; 
             color: white;
-            text-shadow: 0 4px 20px rgba(0,0,0,0.4);
-            letter-spacing: -1px;
+            text-shadow: 0 4px 15px rgba(0,0,0,0.4);
         }
         .hero-title p { 
-            font-size: 1.2rem; 
-            letter-spacing: 4px; 
+            font-size: 1.1rem; 
+            letter-spacing: 2px; 
             text-transform: uppercase; 
             font-weight: 500;
             opacity: 0.95;
-            font-family: var(--font-body);
+            font-family: 'Poppins', sans-serif;
         }
 
-        /* 2. HISTORIA (DISEÑO COLLAGE) */
-        .historia-section { padding: 120px 5%; background: var(--bg-color); overflow: hidden; }
+        /* 2. HISTORIA (DISEÑO 2023) */
+        .historia-section { 
+            padding: 60px 5%; 
+            background: var(--bg-color, #f9fbf9); 
+            overflow: hidden; 
+        }
         .historia-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 80px;
+            gap: 40px; 
             align-items: center;
             max-width: 1200px;
             margin: 0 auto;
         }
-
-        /* Collage de imágenes */
         .collage-wrapper { 
             position: relative; 
-            padding-right: 40px; 
-            padding-bottom: 40px; 
-            transition: var(--transition);
+            padding-right: 20px; 
+            padding-bottom: 20px; 
         }
-        .collage-wrapper:hover .collage-img-main { transform: scale(1.02); }
-        .collage-wrapper:hover .collage-img-sub { transform: scale(1.03) translate(-10px, -10px); }
-
         .collage-img-main {
-            width: 85%;
-            border-radius: 20px;
-            box-shadow: var(--shadow-lg);
+            width: 90%;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
             position: relative;
             z-index: 2;
-            transition: var(--transition);
         }
         .collage-img-sub {
             position: absolute;
             bottom: 0;
             right: 0;
-            width: 55%;
-            border-radius: 20px;
-            border: 8px solid var(--bg-color);
-            box-shadow: var(--shadow-md);
+            width: 50%;
+            border-radius: 15px;
+            border: 6px solid var(--bg-color, #f9fbf9);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
             z-index: 3;
-            transition: var(--transition);
         }
-        .collage-bg {
-            position: absolute;
-            top: -20px; left: -20px;
-            width: 60%; height: 70%;
-            background: #eef7ee;
-            border-radius: 20px;
-            z-index: 1;
-        }
-
         .text-content .subtitle {
-            color: var(--accent-color);
+            color: var(--accent-color, #4cae4c);
             font-weight: 600;
-            letter-spacing: 2px;
+            letter-spacing: 1px;
             text-transform: uppercase;
             font-size: 0.9rem;
             display: block;
-            margin-bottom: 15px;
-            font-family: var(--font-body);
+            margin-bottom: 5px;
         }
         .text-content h2 { 
-            font-family: var(--font-title);
-            font-size: 3rem; 
-            margin-bottom: 25px; 
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem; 
+            margin-bottom: 15px; 
             line-height: 1.2; 
-            color: var(--dark-text);
+            color: var(--dark-text, #2c3e50);
         }
         .text-content p { 
-            color: var(--light-text); 
-            line-height: 1.8; 
-            margin-bottom: 20px; 
-            font-size: 1.05rem; 
-            font-family: var(--font-body);
+            color: var(--light-text, #556b2f); 
+            line-height: 1.6; 
+            margin-bottom: 15px; 
+            font-size: 1rem; 
+            font-family: 'Poppins', sans-serif;
         }
 
-        /* 3. PILARES (CARDS FLOTANTES) */
-        .proposito-section { background: white; padding: 120px 5%; }
-        .proposito-header { text-align: center; max-width: 700px; margin: 0 auto 60px; }
-        .proposito-header h2 { font-family: var(--font-title); font-size: 2.8rem; margin-bottom: 15px; color: var(--dark-text);}
-        .proposito-header p { color: var(--light-text); font-size: 1.1rem; }
+        /* 3. COMPROMISO */
+        .compromiso-section { 
+            padding: 60px 5%; 
+            background: white; 
+        }
+        .compromiso-grid {
+            display: grid; 
+            grid-template-columns: 1fr 1fr; 
+            gap: 40px;
+            align-items: center; 
+            max-width: 1200px; 
+            margin: 0 auto;
+        }
+        .compromiso-img { 
+            width: 100%; 
+            border-radius: 15px; 
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08); 
+            object-fit: cover;
+            height: 400px; 
+        }
+        .check-list { margin-top: 15px; padding: 0; list-style: none; }
+        .check-list li { 
+            margin-bottom: 10px; 
+            display: flex; 
+            align-items: flex-start; 
+            gap: 10px; 
+            font-size: 1rem; 
+            color: var(--dark-text, #2c3e50); 
+            font-family: 'Poppins', sans-serif;
+        }
+        .check-list i { color: var(--accent-color, #4cae4c); font-size: 1.2rem; margin-top: 3px; }
+
+        /* 4. PILARES */
+        .proposito-section { 
+            background: var(--bg-color, #f9fbf9); 
+            padding: 60px 5%; 
+        }
+        .proposito-header { text-align: center; max-width: 700px; margin: 0 auto 30px; }
+        .proposito-header h2 { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 10px; color: var(--dark-text, #2c3e50);}
+        .proposito-header p { color: var(--light-text, #556b2f); font-size: 1rem; font-family: 'Poppins', sans-serif;}
 
         .cards-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px; 
             max-width: 1200px;
             margin: 0 auto;
         }
         .card-nosotros {
-            background: var(--bg-color); 
-            padding: 50px 30px; 
-            border-radius: 20px;
+            background: white; 
+            padding: 30px 20px; 
+            border-radius: 15px;
             text-align: center; 
-            transition: var(--transition);
-            box-shadow: var(--shadow-sm); 
-            border-bottom: 4px solid transparent;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05); 
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s ease;
         }
-        .card-nosotros:hover {
-            transform: translateY(-12px); 
-            box-shadow: var(--shadow-lg); 
-            border-bottom-color: var(--secondary-color);
-            background: white;
-        }
+        .card-nosotros:hover { border-bottom-color: var(--secondary-color, #2e8b57); transform: translateY(-5px); }
         .card-icon-wrapper {
-            width: 80px; height: 80px; 
+            width: 60px; height: 60px; 
             background: #eef7ee; 
             border-radius: 50%;
             display: flex; align-items: center; justify-content: center;
-            margin: 0 auto 25px; 
-            transition: var(--transition);
+            margin: 0 auto 15px; 
         }
-        .card-nosotros i { font-size: 2rem; color: var(--secondary-color); transition: var(--transition); }
-        .card-nosotros:hover .card-icon-wrapper { background: var(--secondary-color); transform: scale(1.1); }
-        .card-nosotros:hover i { color: white; }
-        
-        .card-nosotros h3 { font-size: 1.4rem; color: var(--dark-text); margin-bottom: 15px; font-family: var(--font-body); font-weight: 600;}
-        .card-nosotros p { color: var(--light-text); line-height: 1.7; font-size: 0.95rem; }
+        .card-nosotros i { font-size: 1.5rem; color: var(--secondary-color, #2e8b57); }
+        .card-nosotros h3 { font-size: 1.2rem; color: var(--dark-text, #2c3e50); margin-bottom: 10px; font-weight: 600; font-family: 'Poppins', sans-serif;}
+        .card-nosotros p { color: var(--light-text, #556b2f); line-height: 1.5; font-size: 0.9rem; margin-bottom: 0; font-family: 'Poppins', sans-serif;}
 
-        /* 4. SECCIÓN COMPROMISO (REVERSO) */
-        .compromiso-section { padding: 100px 5% 120px; background: var(--bg-color); }
-        .compromiso-grid {
-            display: grid; grid-template-columns: 1fr 1fr; gap: 80px;
-            align-items: center; max-width: 1200px; margin: 0 auto;
-        }
-        .compromiso-img { 
-            width: 100%; 
-            border-radius: 20px; 
-            box-shadow: var(--shadow-lg); 
-            transition: var(--transition);
-        }
-        .compromiso-img:hover {
-            transform: scale(1.02);
-        }
-        
-        .check-list { margin-top: 30px; padding: 0; list-style: none; }
-        .check-list li { 
-            margin-bottom: 15px; 
-            display: flex; 
-            align-items: center; 
-            gap: 15px; 
-            font-size: 1.05rem; 
-            color: var(--dark-text); 
-            font-family: var(--font-body);
-        }
-        .check-list i { color: var(--accent-color); font-size: 1.3rem; }
-
-        /* 5. BANNER DE CONFIANZA Y CTA */
+        /* 5. BANNER FINAL */
         .trust-banner {
-            padding: 100px 5%; text-align: center; 
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: white; position: relative;
-            overflow: hidden;
-        }
-        .trust-banner::before {
-            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background-image: radial-gradient(rgba(255,255,255,0.15) 2px, transparent 2px);
-            background-size: 40px 40px; opacity: 0.6;
+            padding: 50px 5%; text-align: center; 
+            background: linear-gradient(135deg, var(--primary-color, #0f4c28), var(--secondary-color, #2e8b57));
+            color: white; 
         }
         .trust-stats {
-            display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px;
-            max-width: 1000px; margin: 0 auto 60px; position: relative; z-index: 2;
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
+            max-width: 900px; margin: 0 auto 30px; 
         }
-        .stat-item h3 { font-size: 4rem; color: #eef7ee; margin-bottom: 5px; font-family: var(--font-title); }
-        .stat-item p { font-size: 1.1rem; opacity: 0.9; font-weight: 400; letter-spacing: 1px; }
+        .stat-item h3 { font-size: 3rem; color: #eef7ee; margin-bottom: 0; font-family: 'Playfair Display', serif; }
+        .stat-item p { font-size: 1rem; opacity: 0.9; margin-top: 5px; font-family: 'Poppins', sans-serif;}
         
-        .cta-final { position: relative; z-index: 2; margin-top: 40px; border-top: 1px solid rgba(255,255,255,0.2); padding-top: 50px; }
-        .cta-final h4 { color: white; font-family: var(--font-title); font-size: 2rem; margin-bottom: 25px; }
+        .cta-final { margin-top: 20px; border-top: 1px solid rgba(255,255,255,0.2); padding-top: 30px; }
+        .cta-final h4 { color: white; font-family: 'Playfair Display', serif; font-size: 1.8rem; margin-bottom: 15px; }
         .btn-white {
-            background: white; color: var(--primary-color); padding: 15px 45px;
-            border-radius: 50px; font-weight: 600; font-size: 1.1rem; font-family: var(--font-body);
-            display: inline-block; transition: var(--transition); text-decoration: none;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-        }
-        .btn-white:hover { 
-            background: var(--bg-color); 
-            color: var(--primary-color); 
-            transform: translateY(-5px); 
-            box-shadow: 0 15px 25px rgba(0,0,0,0.2); 
+            background: white; color: var(--primary-color, #0f4c28); padding: 12px 30px;
+            border-radius: 50px; font-weight: 600; font-size: 1rem; font-family: 'Poppins', sans-serif;
+            display: inline-block; text-decoration: none;
         }
 
         /* =========================================
            📱 RESPONSIVE MÓVIL ESTRICTO
            ========================================= */
         @media (max-width: 900px) {
-            .historia-section, .proposito-section, .compromiso-section { padding: 60px 5%; }
-            .hero-title h1 { font-size: 3rem; }
-            .hero-title p { font-size: 0.9rem; letter-spacing: 2px; }
-            
-            .historia-grid, .compromiso-grid { grid-template-columns: 1fr; gap: 50px; }
-            .compromiso-grid .text-content { order: 2; }
-            .compromiso-grid .compromiso-img { order: 1; }
-
-            .text-content h2 { font-size: 2.2rem; }
-            
-            .collage-wrapper { padding-right: 20px; padding-bottom: 20px; margin: 0 auto; max-width: 400px; }
-            .collage-img-main { width: 85%; }
-            .collage-img-sub { width: 65%; border-width: 5px; }
-            
-            .proposito-header h2 { font-size: 2.2rem; }
-
-            .cards-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
-            .card-nosotros { padding: 30px 20px; }
-            .card-icon-wrapper { width: 60px; height: 60px; margin-bottom: 20px; }
-            .card-nosotros i { font-size: 1.5rem; }
-            .card-nosotros h3 { font-size: 1.2rem; }
-            .card-nosotros:last-child:nth-child(odd) { grid-column: 1 / -1; }
-
-            .trust-banner { padding: 60px 5%; }
-            .trust-stats { grid-template-columns: repeat(2, 1fr); gap: 30px 15px; margin-bottom: 40px; }
-            .stat-item h3 { font-size: 2.5rem; }
-            .stat-item p { font-size: 0.9rem; }
-            .stat-item:last-child:nth-child(odd) { grid-column: 1 / -1; }
-
-            .cta-final h4 { font-size: 1.6rem; }
-            .btn-white { padding: 14px 30px; font-size: 1rem; width: 100%; box-sizing: border-box; }
-        }
-
-        @media (max-width: 480px) {
-            .cards-grid { grid-template-columns: 1fr; }
-            .trust-stats { grid-template-columns: 1fr; }
+            .historia-section, .proposito-section, .compromiso-section { padding: 40px 5%; }
             .hero-title h1 { font-size: 2.5rem; }
+            .hero-title p { font-size: 0.85rem; letter-spacing: 1px; }
+            
+            .historia-grid, .compromiso-grid { grid-template-columns: 1fr; gap: 30px; }
+            .compromiso-grid .text-content { order: 2; }
+            .compromiso-grid .compromiso-img { order: 1; height: 250px; }
+
+            .text-content h2 { font-size: 1.8rem; margin-bottom: 10px; }
+            .text-content p { font-size: 0.95rem; margin-bottom: 10px; }
+            
+            .collage-wrapper { padding: 0; margin: 0 auto; max-width: 350px; }
+            .collage-img-main { width: 100%; border-radius: 10px; }
+            .collage-img-sub { display: none; } 
+            
+            .proposito-header { margin-bottom: 20px; }
+            .proposito-header h2 { font-size: 1.8rem; }
+
+            .cards-grid { grid-template-columns: 1fr; gap: 15px; }
+            .card-nosotros { padding: 20px 15px; }
+            .card-icon-wrapper { width: 50px; height: 50px; margin-bottom: 10px; }
+
+            .trust-banner { padding: 40px 5%; }
+            .trust-stats { grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 20px; }
+            .stat-item h3 { font-size: 2.2rem; }
+            .stat-item:last-child { grid-column: 1 / -1; }
+
+            .cta-final h4 { font-size: 1.4rem; }
+            .btn-white { width: 100%; box-sizing: border-box; }
         }
     </style>
 </head>
@@ -394,22 +330,20 @@
         <section class="nosotros-hero">
             <div class="hero-title">
                 <h1>Nuestra Esencia</h1>
-                <p>Bienestar puro, directo de la naturaleza</p>
+                <p>Cuidando tu cuerpo de forma bionatural</p>
             </div>
         </section>
 
         <section class="historia-section">
             <div class="historia-grid">
                 <div class="collage-wrapper">
-                    <div class="collage-bg"></div>
-                    <img src="https://images.unsplash.com/photo-1556911220-e150213ff167?w=800" alt="Producción Natural" class="collage-img-main">
-                    <img src="https://images.unsplash.com/photo-1611078508466-9a250325ff2a?w=400" alt="Ingredientes" class="collage-img-sub">
+                    <img src="img/GO.jpeg" alt="Cuidado corporal natural" class="collage-img-main">
                 </div>
                 <div class="text-content">
-                    <span class="subtitle">Nuestra Historia</span>
-                    <h2>Más que una tienda, un estilo de vida consciente</h2>
-                    <p>En <strong>Primaverita Naturals</strong>, creemos profundamente que la naturaleza posee la sabiduría exacta para sanar, nutrir y fortalecer nuestro cuerpo desde adentro hacia afuera.</p>
-                    <p>Lo que comenzó como una pequeña iniciativa familiar en el corazón de Lima, hoy se ha convertido en el puente de confianza entre la pureza de la tierra y tu bienestar diario. Cada producto que llega a tus manos cuenta una historia de respeto por la naturaleza.</p>
+                    <span class="subtitle">Nuestras Raíces</span>
+                    <h2>Creado en 2023 para transformar tu bienestar</h2>
+                    <p><strong>Primaverita Naturals</strong> nació en el año 2023 con un propósito claro y fundamental: ayudar a las personas ofreciendo productos puramente bionaturales, diseñados específicamente para proteger y cuidar el cuerpo humano.</p>
+                    <p>Entendimos la urgencia de alejarnos de los químicos peligrosos y tóxicos que inundan el mercado tradicional. Nuestra misión es brindarte alternativas seguras que nutran tu piel y tu organismo, respetando la biología de tu cuerpo con ingredientes extraídos directamente de la naturaleza.</p>
                 </div>
             </div>
         </section>
@@ -417,71 +351,49 @@
         <section class="compromiso-section">
             <div class="compromiso-grid">
                 <div class="text-content">
-                    <span class="subtitle">Lo que nos define</span>
-                    <h2>Cuidamos cada detalle de tu salud</h2>
-                    <p>No somos un catálogo inmenso de productos al azar. Seleccionamos rigurosamente cada vitamina, aceite esencial y suplemento, asegurándonos de que cumplan con los más altos estándares de pureza y eficacia.</p>
+                    <span class="subtitle">El estándar Primaverita</span>
+                    <h2>Salud sin riesgos ni químicos</h2>
+                    <p>Tu cuerpo es tu templo y no debe ser expuesto a ingredientes dañinos. Cada producto que forma parte de nuestro catálogo ha sido seleccionado bajo la estricta premisa de ser un aliado para tu salud y no una amenaza silenciosa.</p>
                     <ul class="check-list">
-                        <li><i class="fas fa-check-circle"></i> Libre de químicos agresivos y parabenos.</li>
-                        <li><i class="fas fa-check-circle"></i> Proveedores responsables y sostenibles.</li>
-                        <li><i class="fas fa-check-circle"></i> Asesoría honesta y transparente para ti.</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>Cero químicos peligrosos:</strong> Fórmulas limpias, sin parabenos, sulfatos ni conservantes tóxicos.</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>Cuidado humano real:</strong> Soluciones bionaturales que tu piel y metabolismo reconocen y absorben.</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>Bienestar garantizado:</strong> Transparencia total en cada etiqueta y componente.</li>
                     </ul>
                 </div>
                 <div>
-                    <img src="https://images.unsplash.com/photo-1512069772995-ec65ed45afd6?w=800" alt="Cuidado Natural" class="compromiso-img">
+                    <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=800" alt="Bienestar y cuerpo sano" class="compromiso-img">
                 </div>
             </div>
         </section>
 
         <section class="proposito-section">
             <div class="proposito-header">
-                <h2>Nuestros Pilares</h2>
-                <p>Las bases sobre las que construimos todo lo que hacemos en Primaverita.</p>
+                <h2>Nuestra Filosofía</h2>
+                <p>Las tres columnas que aseguran la calidad de lo que llevas a casa.</p>
             </div>
             
             <div class="cards-grid">
                 <div class="card-nosotros">
                     <div class="card-icon-wrapper">
-                        <i class="fas fa-seedling"></i>
+                        <i class="fas fa-leaf"></i>
                     </div>
-                    <h3>Origen Ético</h3>
-                    <p>Respetamos los ciclos naturales y trabajamos con insumos que honran la tierra.</p>
+                    <h3>100% Bionatural</h3>
+                    <p>Ingredientes extraídos de la tierra en su estado más puro, preservando todas sus propiedades curativas.</p>
                 </div>
                 <div class="card-nosotros">
                     <div class="card-icon-wrapper">
-                        <i class="fas fa-hand-holding-heart"></i>
+                        <i class="fas fa-shield-alt"></i>
                     </div>
-                    <h3>Cuidado Real</h3>
-                    <p>No vendemos por vender; te ofrecemos soluciones para vivir con plenitud.</p>
+                    <h3>Protección Total</h3>
+                    <p>Descartamos cualquier componente sintético o químico que represente un riesgo para el cuerpo humano.</p>
                 </div>
                 <div class="card-nosotros">
                     <div class="card-icon-wrapper">
-                        <i class="fas fa-certificate"></i>
+                        <i class="fas fa-heart"></i>
                     </div>
-                    <h3>Calidad Superior</h3>
-                    <p>Verificamos cada producto para garantizar su alto valor nutricional.</p>
+                    <h3>Amor por la Vida</h3>
+                    <p>Ayudamos a las personas a recuperar su vitalidad natural con productos que realmente sanan.</p>
                 </div>
-            </div>
-        </section>
-
-        <section class="trust-banner">
-            <div class="trust-stats">
-                <div class="stat-item">
-                    <h3 class="counter" data-target="150">+150</h3>
-                    <p>Productos Naturales</p>
-                </div>
-                <div class="stat-item">
-                    <h3 class="counter" data-target="5000">5000+</h3>
-                    <p>Clientes Satisfechos</p>
-                </div>
-                <div class="stat-item">
-                    <h3 class="counter" data-target="2020">2020</h3>
-                    <p>Año de Fundación</p>
-                </div>
-            </div>
-            
-            <div class="cta-final">
-                <h4>¿Listo para transformar tu rutina diaria?</h4>
-                <a href="index.html#categorias" class="btn-white">Explorar Productos <i class="fas fa-arrow-right ml-1"></i></a>
             </div>
         </section>
     </main>

@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primaverita Naturals | Skincare Minimalista</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <style>
+        /* Mismos estilos CSS que el artículo anterior. 
+           Solo asegúrate de pegar las clases .article-hero, .article-content, etc. */
+        :root {
+            --primary-color: #0f4c28;
+            --secondary-color: #2e8b57;
+            --accent-color: #4cae4c;
+            --bg-color: #f9fbf9;
+            --dark-text: #2c3e50;
+            --light-text: #556b2f;
+            --shadow-sm: 0 4px 10px rgba(0,0,0,0.05);
+            --shadow-md: 0 8px 20px rgba(0,0,0,0.08);
+            --transition: all 0.3s ease;
+            --font-title: 'Playfair Display', serif;
+            --font-body: 'Poppins', sans-serif;
+        }
+
+        .article-hero {
+            height: 50vh; min-height: 400px;
+            /* Fondo específico para Skincare */
+            background: linear-gradient(rgba(10, 40, 20, 0.75), rgba(10, 40, 20, 0.9)), 
+                        url('img/minifondo.jpg');
+            background-attachment: fixed; background-size: cover; background-position: center 30%;
+            display: flex; align-items: flex-end; justify-content: center; padding: 60px 20px; text-align: center;
+        }
+        .article-header-content { max-width: 800px; color: white; }
+        .article-cat { background: var(--accent-color); color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; display: inline-block; margin-bottom: 20px; font-family: var(--font-body); }
+        .article-hero h1 { font-family: var(--font-title); font-size: 3.5rem; line-height: 1.2; margin-bottom: 20px; color: #fdfaee; text-shadow: 0 5px 20px rgba(0,0,0,0.8); }
+        .article-meta { font-family: var(--font-body); font-size: 0.95rem; opacity: 0.9; display: flex; justify-content: center; gap: 20px; color: #eef7ee; }
+        .article-meta i { color: var(--accent-color); margin-right: 5px; }
+
+        .article-body { background: white; padding: 60px 5%; }
+        .article-content { max-width: 750px; margin: 0 auto; }
+        .article-content p { font-family: var(--font-body); font-size: 1.1rem; line-height: 1.8; color: var(--dark-text); margin-bottom: 25px; }
+        .article-content h2 { font-family: var(--font-title); font-size: 2.2rem; color: var(--primary-color); margin: 40px 0 20px; }
+        .article-quote { background: var(--bg-color); border-left: 5px solid var(--accent-color); padding: 30px; margin: 40px 0; border-radius: 0 15px 15px 0; font-family: var(--font-title); font-size: 1.5rem; color: var(--primary-color); font-style: italic; line-height: 1.5; }
+        .article-inline-img { width: 100%; height: 400px; object-fit: cover; border-radius: 15px; margin: 30px 0; box-shadow: var(--shadow-sm); }
+        
+        .article-steps { list-style: none; padding: 0; margin: 30px 0; }
+        .article-steps li { display: flex; align-items: flex-start; gap: 15px; margin-bottom: 20px; font-family: var(--font-body); font-size: 1.1rem; line-height: 1.7; color: var(--dark-text); background: var(--bg-color); padding: 20px; border-radius: 10px; }
+        .article-steps i { color: var(--accent-color); font-size: 1.5rem; margin-top: 3px; }
+
+        .article-footer-cta { margin-top: 60px; padding: 40px; background: linear-gradient(135deg, #f0f7f0, #eef7ee); border-radius: 20px; text-align: center; border: 1px solid rgba(76, 174, 76, 0.2); }
+        .article-footer-cta h3 { font-family: var(--font-title); font-size: 1.8rem; color: var(--primary-color); margin-bottom: 15px; }
+        .article-footer-cta p { font-family: var(--font-body); font-size: 1rem; color: var(--light-text); margin-bottom: 25px; }
+        .btn-green { background: var(--primary-color); color: white; padding: 12px 35px; border-radius: 50px; font-weight: 600; font-family: var(--font-body); text-decoration: none; display: inline-block; transition: var(--transition); }
+        .btn-green:hover { background: var(--secondary-color); transform: translateY(-3px); box-shadow: 0 5px 15px rgba(15,76,40,0.2); }
+
+        @media (max-width: 900px) {
+            .article-hero { height: 40vh; min-height: 350px; padding: 40px 5%; }
+            .article-hero h1 { font-size: 2.2rem; }
+            .article-meta { flex-direction: column; gap: 5px; font-size: 0.85rem; }
+            .article-body { padding: 40px 5%; }
+            .article-content p { font-size: 1rem; }
+            .article-content h2 { font-size: 1.8rem; margin: 30px 0 15px; }
+            .article-quote { font-size: 1.2rem; padding: 20px; margin: 30px 0; }
+            .article-inline-img { height: 250px; margin: 20px 0; }
+            .article-steps li { flex-direction: column; gap: 10px; padding: 15px; font-size: 1rem; }
+            .article-footer-cta { padding: 30px 20px; margin-top: 40px; }
+            .article-footer-cta h3 { font-size: 1.5rem; }
+            .btn-green { width: 100%; box-sizing: border-box; }
+        }
+    </style>
+</head>
+<body>
+
+<header class="main-header">
+    <div class="header-content">
+        <a href="#" class="logo">
+            🌿 Primaverita <span class="highlight">Naturals</span>
+        </a>
+
+       <nav class="navbar">
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" class="active"><i class="fas fa-home"></i> Inicio</a></li>
+                
+                <li class="dropdown" id="productosDropdown">
+                    <a href="#" onclick="toggleSubmenu(event)">
+                        <i class="fas fa-leaf"></i> Productos <i class="fas fa-chevron-down ml-1"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li class="has-submenu">
+                            <a href="#">
+                                <span><i class="fas fa-pump-soap"></i> Vitaminas</span>
+                                <i class="fas fa-chevron-right arrow-icon"></i>
+                            </a>
+                            <ul class="submenu-inner">
+                                <li><a href="vitaminas.html">Vitaminas</a></li>
+                                <li><a href="bienestar.html">Bienestar</a></li>
+                                <li><a href="naturales.html">Naturales</a></li>
+                                <li><a href="gomitas.html">Gomitas</a></li>
+                                <li><a href="digestion.html">Digestión y Salud</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="has-submenu">
+                            <a href="#">
+                                <span><i class="fas fa-capsules"></i> Suplementos</span>
+                                <i class="fas fa-chevron-right arrow-icon"></i>
+                            </a>
+                            <ul class="submenu-inner">
+                                <li><a href="proteinas.html">Proteínas</a></li>
+                                <li><a href="aminoacidos.html">Aminoácidos</a></li>
+                                <li><a href="minerales.html">Minerales</a></li>
+                                <li><a href="colagenos.html">Colágenos</a></li>
+                                <li><a href="fibras.html">Fibras</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="has-submenu">
+                            <a href="#">
+                                <span><i class="fas fa-spa"></i> Abarrotes</span>
+                                <i class="fas fa-chevron-right arrow-icon"></i>
+                            </a>
+                            <ul class="submenu-inner">
+                                <li><a href="aceites.html">Aceites y Vinagres</a></li>
+                                <li><a href="barritas.html">Barritas Saludables</a></li>
+                                <li><a href="frutossecos.html">Frutos Secos y Cereales</a></li>
+                                <li><a href="cafe.html">Café y Cacao</a></li>
+                                <li><a href="avenas.html">Avenas</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="has-submenu">
+                            <a href="#">
+                                <span><i class="fas fa-capsules"></i> Cuidado Personal</span>
+                                <i class="fas fa-chevron-right arrow-icon"></i>
+                            </a>
+                            <ul class="submenu-inner">
+                                <li><a href="esenciales.html">Aceites Esenciales</a></li>
+                                <li><a href="cuidadofacial.html">Cuidado Facial</a></li>
+                                <li><a href="aseopersonal.html">Aseo Personal </a></li>
+                                <li><a href="cabello.html">Cuidado del Cabello</a></li>
+                            </ul>
+                        </li>
+
+                       <!--<li><a href="naturales.html"><i class="fas fa-mug-hot"></i> Naturales</a></li>-->
+                    </ul>
+                </li>
+
+                <li><a href="nosotros.html"><i class="fas fa-users"></i> Nosotros</a></li>
+                <li><a href="blog.html"><i class="fas fa-feather-alt"></i> Blog</a></li>
+            </ul>
+        </nav>
+
+        <div class="header-icons">
+            <div class="cart-icon" onclick="toggleCart()">
+                <div class="cart-btn">
+                    <i class="fas fa-shopping-basket"></i>
+                    <span id="cart-count">0</span>
+                </div>
+            </div>
+            
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <main>
+        <header class="article-hero">
+            <div class="article-header-content">
+                <span class="article-cat">Cuidado Facial</span>
+                <h1>Rutina Minimalista: Menos químicos, mejor piel</h1>
+                <div class="article-meta">
+                    <span><i class="far fa-calendar-alt"></i> 02 de Febrero, 2026</span>
+                    <span><i class="far fa-clock"></i> Tiempo de lectura: 4 min</span>
+                    <span><i class="far fa-user"></i> Por Primaverita Naturals</span>
+                </div>
+            </div>
+        </header>
+
+        <article class="article-body">
+            <div class="article-content">
+                <p>Durante los últimos años, la industria cosmética nos ha convencido de que necesitamos rutinas de 10 pasos para tener una piel perfecta. El resultado ha sido millones de personas con barreras cutáneas destruidas, piel sensible y brotes de acné inexplicables debido a la sobreexposición a conservantes, perfumes y químicos sintéticos.</p>
+                
+                <p>En <strong>Primaverita Naturals</strong>, volvemos a lo básico. Tu piel es un órgano inteligente; no necesita ser bombardeada con químicos, solo necesita que le des el soporte adecuado para que haga su trabajo.</p>
+
+                <h2>El peligro del exceso</h2>
+                
+                <p>Mezclar demasiados productos comerciales significa que estás combinando siliconas, parabenos y alcoholes secantes en tu rostro diariamente. Esto altera el pH natural de tu piel y elimina las bacterias buenas que la protegen de infecciones y envejecimiento prematuro.</p>
+
+                <div class="article-quote">
+                    "El minimalismo facial no es hacer menos, es aplicar ingredientes más puros. Tres productos bionaturales harán más por tu piel que 10 frascos químicos."
+                </div>
+
+                <img src="img/textura.jpg" alt="Textura de crema natural" class="article-inline-img">
+
+                <h2>La regla de los 3 pasos naturales</h2>
+                
+                <p>Solo necesitas tres pasos esenciales, mañana y noche, asegurándote de que los ingredientes provengan de la naturaleza:</p>
+
+                <ul class="article-steps">
+                    <li>
+                        <i class="fas fa-tint"></i>
+                        <div>
+                            <strong>1. Limpieza Suave</strong><br>
+                            Olvida los jabones que dejan tu piel "rechinante" de limpia (eso significa que has barrido tus aceites naturales). Usa un limpiador botánico suave que retire impurezas sin resecar.
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-leaf"></i>
+                        <div>
+                            <strong>2. Tonificación Pura</strong><br>
+                            Un agua floral (como el agua de rosas o manzanilla pura) devuelve el pH a la normalidad al instante y prepara los poros para la hidratación. Sin alcohol, sin perfumes añadidos.
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-seedling"></i>
+                        <div>
+                            <strong>3. Hidratación / Sellado</strong><br>
+                            Dependiendo de tu tipo de piel, usa un aceite vegetal puro (como jojoba o rosa mosqueta) o una crema base natural, como nuestro extracto de Aloe Vera. Esto sellará la humedad y aportará antioxidantes reales.
+                        </div>
+                    </li>
+                </ul>
+
+                <p>Dale a tu rostro un "détox" de químicos durante un mes aplicando solo esta rutina minimalista y verás cómo tu piel recupera su brillo y equilibrio natural.</p>
+
+                <div class="article-footer-cta">
+                    <h3>Construye tu Rutina Bionatural</h3>
+                    <p>Encuentra limpiadores, tónicos y humectantes formulados solo con lo mejor de la naturaleza.</p>
+                    <a href="cuidadofacial.html" class="btn-green">Ver Cuidado Facial <i class="fas fa-leaf ml-1"></i></a>
+                </div>
+            </div>
+        </article>
+    </main>
+
+   <footer>
+        <div class="container footer-content">
+            <div class="footer-col brand-col">
+                <a href="#" class="logo footer-logo">
+                    🌿 Primaverita <span class="highlight">Naturales</span>
+                </a>
+                <p class="mt-3">Tu espacio de bienestar. Productos naturales seleccionados para cuidar de ti y de los tuyos en armonía con la naturaleza.</p>
+            </div>
+
+            <div class="footer-col contact-col">
+                <h3>Contáctanos</h3>
+                <ul class="contact-list">
+                    <li><i class="fab fa-whatsapp"></i> +51 906 550 385</li>
+                    <li><i class="fas fa-envelope"></i> hola@primaverita.com</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Lima, Perú</li>
+                </ul>
+                
+                <a href="https://wa.me/51906550385" target="_blank" class="footer-btn-wa">
+                    <i class="fab fa-whatsapp"></i> Chat directo
+                </a>
+
+                <div class="socials">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Primaverita Naturales. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <div id="cart-sidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h3>Tu Canasta 🌿</h3>
+            <span class="close-cart" onclick="toggleCart()">&times;</span>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <p class="empty-msg">Tu carrito está vacío</p>
+        </div>
+        <div class="cart-footer">
+            <div class="total">Total: S/ <span id="cart-total">0.00</span></div>
+            <button class="btn-whatsapp" onclick="checkoutWhatsApp()">
+                <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
+            </button>
+        </div>
+    </div>
+    <div id="overlay" class="overlay" onclick="toggleCart()"></div>
+    
+    <div id="productModal" class="modal-overlay">
+    <div class="modal-content">
+        <span class="close-modal" onclick="closeModal()">&times;</span>
+        
+        <div class="modal-body">
+            <div class="modal-img-container">
+                <img id="m-img" src="" alt="Producto">
+                <span id="m-discount" class="modal-badge">-10%</span> </div>
+
+            <div class="modal-info">
+                <h2 id="m-title">Nombre Producto</h2>
+                <p id="m-desc" class="modal-description">Descripción del producto...</p>
+                
+                <div class="modal-price-box">
+                    <span class="currency">S/</span>
+                    <span id="m-price">0.00</span>
+                </div>
+
+                <div class="qty-selector">
+                    <span>Cantidad:</span>
+                    <div class="qty-controls">
+                        <button onclick="updateModalQty(-1)">-</button>
+                        <input type="number" id="m-qty" value="1" readonly>
+                        <button onclick="updateModalQty(1)">+</button>
+                    </div>
+                </div>
+
+                <div class="modal-buttons">
+                    <button class="btn-modal-cart" onclick="addFromModalToCart()">
+                        <i class="fas fa-shopping-basket"></i> Agregar al Carrito
+                    </button>
+                    <button class="btn-modal-wa" onclick="buyNowWhatsApp()">
+                        <i class="fab fa-whatsapp"></i> Comprar ahora
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <script src="js/main.js"></script>
+</body>
+</html>
