@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primaverita Naturals | Beneficios del Aloe Vera</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <style>
+        /* =========================================
+           VARIABLES BASE (Por si no cargan del styles.css)
+           ========================================= */
+        :root {
+            --primary-color: #0f4c28;
+            --secondary-color: #2e8b57;
+            --accent-color: #4cae4c;
+            --bg-color: #f4f9f4;
+            --dark-text: #2c3e50;
+            --light-text: #556b2f;
+            --shadow-sm: 0 4px 6px rgba(0,0,0,0.05);
+            --shadow-md: 0 10px 20px rgba(0,0,0,0.1);
+            --shadow-lg: 0 15px 30px rgba(0,0,0,0.15);
+            --transition: all 0.3s ease;
+            --font-title: 'Playfair Display', serif;
+            --font-body: 'Poppins', sans-serif;
+        }
+
+        /* =========================================
+           ESTILOS EXCLUSIVOS: PÁGINA ALOE VERA
+           ========================================= */
+        
+        /* 1. HERO SECTION ALOE */
+        .aloe-hero {
+            height: 60vh;
+            min-height: 400px;
+            background: linear-gradient(rgba(15, 76, 40, 0.7), rgba(15, 76, 40, 0.4)), 
+                        url('https://images.unsplash.com/photo-1596755389378-c31d21fd1273?q=80&w=1920');
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center 60%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+        }
+        .aloe-hero h1 { 
+            font-family: var(--font-title); 
+            font-size: 4.5rem; 
+            margin-bottom: 15px; 
+            color: white;
+            text-shadow: 0 4px 15px rgba(0,0,0,0.4);
+        }
+        .aloe-hero p { 
+            font-size: 1.2rem; 
+            letter-spacing: 2px; 
+            text-transform: uppercase; 
+            font-weight: 500;
+            opacity: 0.95;
+            font-family: var(--font-body);
+        }
+
+        /* 2. INTRODUCCIÓN */
+        .aloe-intro {
+            padding: 80px 5%;
+            background: #fff;
+            text-align: center;
+        }
+        .intro-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .subtitle-aloe {
+            color: var(--accent-color);
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            display: block;
+            margin-bottom: 15px;
+            font-family: var(--font-body);
+        }
+        .intro-container h2 {
+            font-family: var(--font-title);
+            font-size: 2.8rem;
+            color: var(--dark-text);
+            margin-bottom: 25px;
+            line-height: 1.3;
+        }
+        .intro-container p {
+            font-family: var(--font-body);
+            color: var(--light-text);
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        /* 3. GRILLA DE BENEFICIOS */
+        .beneficios-section {
+            background: var(--bg-color);
+            padding: 80px 5%;
+        }
+        .beneficios-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .beneficio-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            border-bottom: 4px solid transparent;
+        }
+        .beneficio-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+            border-bottom-color: var(--secondary-color);
+        }
+        .beneficio-img {
+            height: 220px;
+            width: 100%;
+            object-fit: cover;
+        }
+        .beneficio-content {
+            padding: 30px;
+            text-align: left;
+        }
+        .beneficio-icon {
+            width: 60px;
+            height: 60px;
+            background: #eef7ee;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: -60px;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 2;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: var(--transition);
+        }
+        .beneficio-card:hover .beneficio-icon {
+            background: var(--secondary-color);
+        }
+        .beneficio-icon i {
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+            transition: var(--transition);
+        }
+        .beneficio-card:hover .beneficio-icon i {
+            color: white;
+        }
+        .beneficio-content h3 {
+            font-family: var(--font-body);
+            font-size: 1.4rem;
+            color: var(--dark-text);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        .beneficio-content p {
+            color: var(--light-text);
+            line-height: 1.6;
+            font-size: 0.95rem;
+            font-family: var(--font-body);
+        }
+
+        /* 4. BANNER CTA ALOE */
+        .aloe-cta {
+            padding: 80px 5%;
+            text-align: center;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            position: relative;
+        }
+        .aloe-cta-content {
+            position: relative;
+            z-index: 2;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .aloe-cta h2 {
+            font-family: var(--font-title);
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+        }
+        .aloe-cta p {
+            font-family: var(--font-body);
+            font-size: 1.1rem;
+            margin-bottom: 35px;
+            opacity: 0.9;
+        }
+        .btn-white {
+            background: white;
+            color: var(--primary-color);
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-family: var(--font-body);
+            font-weight: 600;
+            font-size: 1.1rem;
+            text-decoration: none;
+            display: inline-block;
+            transition: var(--transition);
+        }
+        .btn-white:hover {
+            background: var(--bg-color);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        /* =========================================
+           📱 RESPONSIVE MÓVIL ESTRICTO
+           ========================================= */
+        @media (max-width: 900px) {
+            .aloe-hero { height: 50vh; }
+            .aloe-hero h1 { font-size: 2.8rem; }
+            .aloe-hero p { font-size: 0.9rem; }
+            
+            .aloe-intro { padding: 50px 5%; }
+            .intro-container h2 { font-size: 2.2rem; }
+            .intro-container p { font-size: 1rem; }
+            
+            .beneficios-section { padding: 50px 5%; }
+            .beneficios-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            .beneficio-img { height: 180px; }
+            
+            .aloe-cta { padding: 60px 5%; }
+            .aloe-cta h2 { font-size: 2.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="header-content">
+            <a href="index.html" class="logo">
+                🌿 Primaverita <span class="highlight">Naturals</span>
+            </a>
+
+           <nav class="navbar">
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" class="active"><i class="fas fa-home"></i> Inicio</a></li>
+                
+                <li class="dropdown" id="productosDropdown">
+                    <a href="#" onclick="toggleSubmenu(event)">
+                        <i class="fas fa-leaf"></i> Productos <i class="fas fa-chevron-down ml-1"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li class="has-submenu">
+                            <a href="#">
+                                <span><i class="fas fa-pump-soap"></i> Vitaminas</span>
+                                <i class="fas fa-chevron-right arrow-icon"></i>
+                            </a>
+                            <ul class="submenu-inner">
+                                <li><a href="vitaminas.html">Vitaminas</a></li>
+                                <li><a href="bienestar.html">Bienestar</a></li>
+                                <li><a href="naturales.html">Naturales</a></li>
+                                <li><a href="gomitas.html">Gomitas</a></li>
+                                <li><a href="digestion.html">Digestión y Salud</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="has-submenu">
+                            <a href="#">
+                                <span><i class="fas fa-capsules"></i> Suplementos</span>
+                                <i class="fas fa-chevron-right arrow-icon"></i>
+                            </a>
+                            <ul class="submenu-inner">
+                                <li><a href="proteinas.html">Proteínas</a></li>
+                                <li><a href="aminoacidos.html">Aminoácidos</a></li>
+                                <li><a href="minerales.html">Minerales</a></li>
+                                <li><a href="colagenos.html">Colágenos</a></li>
+                                <li><a href="fibras.html">Fibras</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="has-submenu">
+                            <a href="#">
+                                <span><i class="fas fa-spa"></i> Abarrotes</span>
+                                <i class="fas fa-chevron-right arrow-icon"></i>
+                            </a>
+                            <ul class="submenu-inner">
+                                <li><a href="aceites.html">Aceites y Vinagres</a></li>
+                                <li><a href="barritas.html">Barritas Saludables</a></li>
+                                <li><a href="frutossecos.html">Frutos Secos y Cereales</a></li>
+                                <li><a href="cafe.html">Café y Cacao</a></li>
+                                <li><a href="avenas.html">Avenas</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="has-submenu">
+                            <a href="#">
+                                <span><i class="fas fa-capsules"></i> Cuidado Personal</span>
+                                <i class="fas fa-chevron-right arrow-icon"></i>
+                            </a>
+                            <ul class="submenu-inner">
+                                <li><a href="esenciales.html">Aceites Esenciales</a></li>
+                                <li><a href="cuidadofacial.html">Cuidado Facial</a></li>
+                                <li><a href="aseopersonal.html">Aseo Personal </a></li>
+                                <li><a href="cabello.html">Cuidado del Cabello</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+                <li><a href="nosotros.html"><i class="fas fa-users"></i> Nosotros</a></li>
+                <li><a href="blog.html"><i class="fas fa-feather-alt"></i> Blog</a></li>
+            </ul>
+        </nav>
+            
+            <div class="header-icons">
+                <div class="cart-icon" onclick="toggleCart()">
+                    <div class="cart-btn">
+                        <i class="fas fa-shopping-basket"></i>
+                        <span id="cart-count">0</span>
+                    </div>
+                </div>
+                <div class="menu-toggle" onclick="toggleMenu()">
+                    <div class="bar1"></div><div class="bar2"></div><div class="bar3"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="aloe-hero">
+            <div class="hero-title">
+                <h1>El Poder del Aloe Vera</h1>
+                <p>El milagro verde de la naturaleza para tu bienestar integral</p>
+            </div>
+        </section>
+
+        <section class="aloe-intro">
+            <div class="intro-container">
+                <span class="subtitle-aloe">Conoce tu Piel y tu Cuerpo</span>
+                <h2>Más de 200 componentes activos en una sola planta</h2>
+                <p>Conocida históricamente como "la planta de la inmortalidad", el Aloe Vera es uno de los remedios naturales más potentes que existen. Sus hojas carnosas esconden un gel transparente rico en vitaminas, minerales, enzimas y aminoácidos esenciales.</p>
+                <p>En <strong>Primaverita Naturals</strong>, hemos integrado la pureza del Aloe en nuestra línea de cuidado personal para llevarte sus beneficios directamente de la tierra a tu rutina diaria.</p>
+            </div>
+        </section>
+
+        <section class="beneficios-section">
+            <div class="beneficios-grid">
+                
+                <div class="beneficio-card">
+                    <img src="img/gel.jpg" alt="Hidratación profunda" class="beneficio-img">
+                    <div class="beneficio-content">
+                        <div class="beneficio-icon"><i class="fas fa-tint"></i></div>
+                        <h3>Hidratación Profunda</h3>
+                        <p>El gel de Aloe Vera penetra las tres capas de la piel (epidermis, dermis e hipodermis), expulsando bacterias y depósitos de grasa que obstruyen los poros. Excelente humectante sin dejar sensación grasa.</p>
+                    </div>
+                </div>
+
+                <div class="beneficio-card">
+                    <img src="img/reg.jpg" alt="Regeneración celular" class="beneficio-img">
+                    <div class="beneficio-content">
+                        <div class="beneficio-icon"><i class="fas fa-leaf"></i></div>
+                        <h3>Regeneración Celular</h3>
+                        <p>Acelera el proceso de cicatrización de heridas y quemaduras. Sus hormonas vegetales (auxinas y giberelinas) estimulan el crecimiento de nuevas células y reducen la inflamación.</p>
+                    </div>
+                </div>
+
+                <div class="beneficio-card">
+                    <img src="img/cabello.webp" alt="Cabello fuerte" class="beneficio-img">
+                    <div class="beneficio-content">
+                        <div class="beneficio-icon"><i class="fas fa-spa"></i></div>
+                        <h3>Cabello Fuerte y Sano</h3>
+                        <p>Contiene enzimas protectoras que reparan las células muertas del cuero cabelludo. Previene la caída del cabello, reduce la caspa y acondiciona profundamente, dejando el pelo suave y brillante.</p>
+                    </div>
+                </div>
+
+                <div class="beneficio-card">
+                    <img src="img/mejora.jpg" alt="Mejora la digestión" class="beneficio-img">
+                    <div class="beneficio-content">
+                        <div class="beneficio-icon"><i class="fas fa-apple-alt"></i></div>
+                        <h3>Salud Digestiva</h3>
+                        <p>Consumido como suplemento o jugo natural, el Aloe ayuda a calmar y limpiar el tracto digestivo, mejorando la absorción de nutrientes y aliviando problemas como la acidez y el estreñimiento.</p>
+                    </div>
+                </div>
+
+                <div class="beneficio-card">
+                    <img src="img/poder.jpg" alt="Poder Antioxidante" class="beneficio-img">
+                    <div class="beneficio-content">
+                        <div class="beneficio-icon"><i class="fas fa-shield-alt"></i></div>
+                        <h3>Poder Antioxidante</h3>
+                        <p>Es rico en polifenoles, potentes antioxidantes que ayudan a inhibir el crecimiento de ciertas bacterias infecciosas y protegen al cuerpo contra el daño de los radicales libres y el envejecimiento prematuro.</p>
+                    </div>
+                </div>
+
+                <div class="beneficio-card">
+                    <img src="img/anti.jpg" alt="Efecto Antiinflamatorio" class="beneficio-img">
+                    <div class="beneficio-content">
+                        <div class="beneficio-icon"><i class="fas fa-heartbeat"></i></div>
+                        <h3>Efecto Antiinflamatorio</h3>
+                        <p>Sus esteroles vegetales combaten la inflamación de forma natural. Ideal para aliviar el enrojecimiento, acné, psoriasis y calmar la piel después de la exposición solar prolongada.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-col brand-col">
+                <a href="#" class="logo footer-logo">
+                    🌿 Primaverita <span class="highlight">Naturals</span>
+                </a>
+                <p class="mt-3">Tu espacio de bienestar. Productos naturales seleccionados para cuidar de ti y de los tuyos en armonía con la naturaleza.</p>
+            </div>
+
+            <div class="footer-col contact-col">
+                <h3>Contáctanos</h3>
+                <ul class="contact-list">
+                    <li><i class="fab fa-whatsapp"></i> +51 906 550 385</li>
+                    <li><i class="fas fa-envelope"></i> hola@primaverita.com</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Lima, Perú</li>
+                </ul>
+                
+                <a href="https://wa.me/51906550385" target="_blank" class="footer-btn-wa">
+                    <i class="fab fa-whatsapp"></i> Chat directo
+                </a>
+
+                <div class="socials">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Primaverita Naturals. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <div id="cart-sidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h3>Tu Canasta 🌿</h3>
+            <span class="close-cart" onclick="toggleCart()">&times;</span>
+        </div>
+        <div class="cart-items" id="cart-items"><p class="empty-msg">Vacío</p></div>
+        <div class="cart-footer">
+            <div class="total">Total: S/ <span id="cart-total">0.00</span></div>
+            <button class="btn-whatsapp" onclick="checkoutWhatsApp()"><i class="fab fa-whatsapp"></i> Pedir</button>
+        </div>
+    </div>
+    <div id="overlay" class="overlay" onclick="toggleCart()"></div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -10,14 +10,32 @@
     
     <style>
         /* =========================================
+           VARIABLES DE RESPALDO (Por si fallan en styles.css)
+           ========================================= */
+        :root {
+            --primary-color: #0f4c28;
+            --secondary-color: #2e8b57;
+            --accent-color: #4cae4c;
+            --bg-color: #f9fbf9;
+            --dark-text: #2c3e50;
+            --light-text: #556b2f;
+            --shadow-sm: 0 4px 15px rgba(0,0,0,0.03);
+            --shadow-md: 0 10px 25px rgba(0,0,0,0.08);
+            --shadow-lg: 0 20px 40px rgba(0,0,0,0.12);
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            --font-title: 'Playfair Display', serif;
+            --font-body: 'Poppins', sans-serif;
+        }
+
+        /* =========================================
            ESTILOS EXCLUSIVOS: NOSOTROS (PREMIUM)
            ========================================= */
         
         /* 1. HERO SECTION */
         .nosotros-hero {
-            height: 55vh;
+            height: 60vh;
             min-height: 400px;
-            background: linear-gradient(rgba(15, 76, 40, 0.6), rgba(15, 76, 40, 0.4)), 
+            background: linear-gradient(rgba(15, 76, 40, 0.65), rgba(15, 76, 40, 0.45)), 
                         url('https://images.unsplash.com/photo-1540420773420-3366772f4999?q=80&w=1920');
             background-attachment: fixed;
             background-size: cover;
@@ -29,40 +47,61 @@
             color: white;
             padding: 0 20px;
         }
+        
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero-title {
+            animation: fadeUp 1s ease-out forwards;
+        }
+
         .hero-title h1 { 
-            font-family: 'Playfair Display', serif; 
-            font-size: 4.5rem; 
+            font-family: var(--font-title); 
+            font-size: 4.8rem; 
             margin-bottom: 15px; 
             color: white;
-            text-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            text-shadow: 0 4px 20px rgba(0,0,0,0.4);
+            letter-spacing: -1px;
         }
         .hero-title p { 
             font-size: 1.2rem; 
-            letter-spacing: 3px; 
+            letter-spacing: 4px; 
             text-transform: uppercase; 
             font-weight: 500;
-            opacity: 0.9;
+            opacity: 0.95;
+            font-family: var(--font-body);
         }
 
         /* 2. HISTORIA (DISEÑO COLLAGE) */
-        .historia-section { padding: 100px 5%; background: var(--bg-color); overflow: hidden; }
+        .historia-section { padding: 120px 5%; background: var(--bg-color); overflow: hidden; }
         .historia-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 60px;
+            gap: 80px;
             align-items: center;
             max-width: 1200px;
             margin: 0 auto;
         }
 
         /* Collage de imágenes */
-        .collage-wrapper { position: relative; padding-right: 40px; padding-bottom: 40px; }
+        .collage-wrapper { 
+            position: relative; 
+            padding-right: 40px; 
+            padding-bottom: 40px; 
+            transition: var(--transition);
+        }
+        .collage-wrapper:hover .collage-img-main { transform: scale(1.02); }
+        .collage-wrapper:hover .collage-img-sub { transform: scale(1.03) translate(-10px, -10px); }
+
         .collage-img-main {
             width: 85%;
             border-radius: 20px;
             box-shadow: var(--shadow-lg);
             position: relative;
             z-index: 2;
+            transition: var(--transition);
         }
         .collage-img-sub {
             position: absolute;
@@ -73,6 +112,7 @@
             border: 8px solid var(--bg-color);
             box-shadow: var(--shadow-md);
             z-index: 3;
+            transition: var(--transition);
         }
         .collage-bg {
             position: absolute;
@@ -90,157 +130,170 @@
             text-transform: uppercase;
             font-size: 0.9rem;
             display: block;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
+            font-family: var(--font-body);
         }
-        .text-content h2 { font-size: 3rem; margin-bottom: 25px; line-height: 1.2; }
-        .text-content p { color: var(--light-text); line-height: 1.8; margin-bottom: 20px; font-size: 1.05rem; }
+        .text-content h2 { 
+            font-family: var(--font-title);
+            font-size: 3rem; 
+            margin-bottom: 25px; 
+            line-height: 1.2; 
+            color: var(--dark-text);
+        }
+        .text-content p { 
+            color: var(--light-text); 
+            line-height: 1.8; 
+            margin-bottom: 20px; 
+            font-size: 1.05rem; 
+            font-family: var(--font-body);
+        }
 
         /* 3. PILARES (CARDS FLOTANTES) */
-        .proposito-section { background: #f4f9f4; padding: 100px 5%; }
-        .proposito-header { text-align: center; max-width: 700px; margin: 0 auto 50px; }
-        .proposito-header h2 { font-size: 2.8rem; margin-bottom: 15px; }
+        .proposito-section { background: white; padding: 120px 5%; }
+        .proposito-header { text-align: center; max-width: 700px; margin: 0 auto 60px; }
+        .proposito-header h2 { font-family: var(--font-title); font-size: 2.8rem; margin-bottom: 15px; color: var(--dark-text);}
         .proposito-header p { color: var(--light-text); font-size: 1.1rem; }
 
         .cards-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
             max-width: 1200px;
             margin: 0 auto;
         }
         .card-nosotros {
-            background: white; padding: 50px 30px; border-radius: 20px;
-            text-align: center; transition: var(--transition);
-            box-shadow: var(--shadow-sm); border-bottom: 4px solid transparent;
+            background: var(--bg-color); 
+            padding: 50px 30px; 
+            border-radius: 20px;
+            text-align: center; 
+            transition: var(--transition);
+            box-shadow: var(--shadow-sm); 
+            border-bottom: 4px solid transparent;
         }
         .card-nosotros:hover {
-            transform: translateY(-10px); box-shadow: var(--shadow-lg); border-bottom-color: var(--secondary-color);
+            transform: translateY(-12px); 
+            box-shadow: var(--shadow-lg); 
+            border-bottom-color: var(--secondary-color);
+            background: white;
         }
         .card-icon-wrapper {
-            width: 80px; height: 80px; background: #eef7ee; border-radius: 50%;
+            width: 80px; height: 80px; 
+            background: #eef7ee; 
+            border-radius: 50%;
             display: flex; align-items: center; justify-content: center;
-            margin: 0 auto 25px; transition: var(--transition);
+            margin: 0 auto 25px; 
+            transition: var(--transition);
         }
-        .card-nosotros i { font-size: 2rem; color: var(--secondary-color); }
-        .card-nosotros:hover .card-icon-wrapper { background: var(--secondary-color); }
+        .card-nosotros i { font-size: 2rem; color: var(--secondary-color); transition: var(--transition); }
+        .card-nosotros:hover .card-icon-wrapper { background: var(--secondary-color); transform: scale(1.1); }
         .card-nosotros:hover i { color: white; }
         
         .card-nosotros h3 { font-size: 1.4rem; color: var(--dark-text); margin-bottom: 15px; font-family: var(--font-body); font-weight: 600;}
-        .card-nosotros p { color: var(--light-text); line-height: 1.6; font-size: 0.95rem; }
+        .card-nosotros p { color: var(--light-text); line-height: 1.7; font-size: 0.95rem; }
 
         /* 4. SECCIÓN COMPROMISO (REVERSO) */
-        .compromiso-section { padding: 100px 5%; background: white; }
+        .compromiso-section { padding: 100px 5% 120px; background: var(--bg-color); }
         .compromiso-grid {
-            display: grid; grid-template-columns: 1fr 1fr; gap: 60px;
+            display: grid; grid-template-columns: 1fr 1fr; gap: 80px;
             align-items: center; max-width: 1200px; margin: 0 auto;
         }
-        .compromiso-img { width: 100%; border-radius: 20px; box-shadow: var(--shadow-md); }
+        .compromiso-img { 
+            width: 100%; 
+            border-radius: 20px; 
+            box-shadow: var(--shadow-lg); 
+            transition: var(--transition);
+        }
+        .compromiso-img:hover {
+            transform: scale(1.02);
+        }
         
-        .check-list { margin-top: 25px; }
-        .check-list li { margin-bottom: 15px; display: flex; align-items: center; gap: 15px; font-size: 1.05rem; color: var(--dark-text); }
-        .check-list i { color: var(--accent-color); font-size: 1.2rem; }
+        .check-list { margin-top: 30px; padding: 0; list-style: none; }
+        .check-list li { 
+            margin-bottom: 15px; 
+            display: flex; 
+            align-items: center; 
+            gap: 15px; 
+            font-size: 1.05rem; 
+            color: var(--dark-text); 
+            font-family: var(--font-body);
+        }
+        .check-list i { color: var(--accent-color); font-size: 1.3rem; }
 
         /* 5. BANNER DE CONFIANZA Y CTA */
         .trust-banner {
-            padding: 80px 5%; text-align: center; background: var(--primary-color);
+            padding: 100px 5%; text-align: center; 
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             color: white; position: relative;
+            overflow: hidden;
         }
         .trust-banner::before {
             content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background-image: radial-gradient(rgba(255,255,255,0.1) 2px, transparent 2px);
-            background-size: 30px 30px; opacity: 0.5;
+            background-image: radial-gradient(rgba(255,255,255,0.15) 2px, transparent 2px);
+            background-size: 40px 40px; opacity: 0.6;
         }
         .trust-stats {
             display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px;
-            max-width: 1000px; margin: 0 auto 50px; position: relative; z-index: 2;
+            max-width: 1000px; margin: 0 auto 60px; position: relative; z-index: 2;
         }
-        .stat-item h3 { font-size: 3.5rem; color: var(--accent-color); margin-bottom: 5px; font-family: var(--font-title); }
-        .stat-item p { font-size: 1.1rem; opacity: 0.9; font-weight: 300; }
+        .stat-item h3 { font-size: 4rem; color: #eef7ee; margin-bottom: 5px; font-family: var(--font-title); }
+        .stat-item p { font-size: 1.1rem; opacity: 0.9; font-weight: 400; letter-spacing: 1px; }
         
-        .cta-final { position: relative; z-index: 2; margin-top: 40px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 40px; }
-        .cta-final h4 { color: white; font-size: 1.8rem; margin-bottom: 20px; }
+        .cta-final { position: relative; z-index: 2; margin-top: 40px; border-top: 1px solid rgba(255,255,255,0.2); padding-top: 50px; }
+        .cta-final h4 { color: white; font-family: var(--font-title); font-size: 2rem; margin-bottom: 25px; }
         .btn-white {
-            background: white; color: var(--primary-color); padding: 15px 40px;
-            border-radius: 50px; font-weight: 600; font-size: 1.1rem;
-            display: inline-block; transition: var(--transition);
+            background: white; color: var(--primary-color); padding: 15px 45px;
+            border-radius: 50px; font-weight: 600; font-size: 1.1rem; font-family: var(--font-body);
+            display: inline-block; transition: var(--transition); text-decoration: none;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         }
-        .btn-white:hover { background: var(--accent-color); color: white; transform: translateY(-3px); }
+        .btn-white:hover { 
+            background: var(--bg-color); 
+            color: var(--primary-color); 
+            transform: translateY(-5px); 
+            box-shadow: 0 15px 25px rgba(0,0,0,0.2); 
+        }
 
         /* =========================================
-           📱 RESPONSIVE MÓVIL ESTRICTO (ESTÉTICA MEJORADA)
+           📱 RESPONSIVE MÓVIL ESTRICTO
            ========================================= */
         @media (max-width: 900px) {
-            /* Ajustes Generales */
-            .historia-section, .proposito-section, .compromiso-section { padding: 50px 5%; }
-            .hero-title h1 { font-size: 2.8rem; }
+            .historia-section, .proposito-section, .compromiso-section { padding: 60px 5%; }
+            .hero-title h1 { font-size: 3rem; }
             .hero-title p { font-size: 0.9rem; letter-spacing: 2px; }
             
-            /* Grillas a 1 columna para textos e imágenes */
-            .historia-grid, .compromiso-grid { grid-template-columns: 1fr; gap: 40px; }
-            
-            /* Invertir orden en Compromiso (Foto arriba) */
+            .historia-grid, .compromiso-grid { grid-template-columns: 1fr; gap: 50px; }
             .compromiso-grid .text-content { order: 2; }
             .compromiso-grid .compromiso-img { order: 1; }
 
-            /* Ajustes Textos (Alineados a la izquierda para mejor lectura en móvil) */
-            .text-content { text-align: left; }
-            .text-content h2 { font-size: 2rem; margin-bottom: 15px; }
-            .text-content p { font-size: 0.95rem; margin-bottom: 15px; }
-            .check-list li { font-size: 0.95rem; align-items: flex-start; }
-
-            /* Collage proporcionado */
-            .collage-wrapper { padding-right: 20px; padding-bottom: 20px; margin: 0 auto; max-width: 350px; }
+            .text-content h2 { font-size: 2.2rem; }
+            
+            .collage-wrapper { padding-right: 20px; padding-bottom: 20px; margin: 0 auto; max-width: 400px; }
             .collage-img-main { width: 85%; }
-            .collage-img-sub { width: 65%; }
+            .collage-img-sub { width: 65%; border-width: 5px; }
             
-            /* Títulos centrados solo para cabeceras de sección */
-            .proposito-header h2 { font-size: 2rem; }
-            .proposito-header p { font-size: 0.95rem; }
+            .proposito-header h2 { font-size: 2.2rem; }
 
-            /* 🎯 MAGIA: CAJAS (PILARES) DE 2 EN 2 EN MÓVIL */
-            .cards-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 15px;
-            }
-            .card-nosotros {
-                padding: 25px 15px; /* Menos padding interno */
-            }
-            .card-icon-wrapper {
-                width: 50px; height: 50px; /* Icono más pequeño */
-                margin-bottom: 15px;
-            }
-            .card-nosotros i { font-size: 1.3rem; }
-            .card-nosotros h3 { font-size: 1.1rem; margin-bottom: 10px; }
-            .card-nosotros p { font-size: 0.8rem; line-height: 1.4; }
-            
-            /* El tercer pilar (impar) se centra ocupando las 2 columnas */
-            .card-nosotros:last-child:nth-child(odd) {
-                grid-column: 1 / -1;
-            }
+            .cards-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+            .card-nosotros { padding: 30px 20px; }
+            .card-icon-wrapper { width: 60px; height: 60px; margin-bottom: 20px; }
+            .card-nosotros i { font-size: 1.5rem; }
+            .card-nosotros h3 { font-size: 1.2rem; }
+            .card-nosotros:last-child:nth-child(odd) { grid-column: 1 / -1; }
 
-            /* 🎯 MAGIA: ESTADÍSTICAS EN 2 COLUMNAS MÓVIL */
-            .trust-banner { padding: 50px 5%; }
-            .trust-stats {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 25px 10px;
-                margin-bottom: 30px;
-            }
-            .stat-item h3 { font-size: 2.2rem; }
-            .stat-item p { font-size: 0.85rem; }
-            
-            /* La tercera estadística (Año) se centra ocupando todo el ancho */
-            .stat-item:last-child:nth-child(odd) {
-                grid-column: 1 / -1;
-            }
+            .trust-banner { padding: 60px 5%; }
+            .trust-stats { grid-template-columns: repeat(2, 1fr); gap: 30px 15px; margin-bottom: 40px; }
+            .stat-item h3 { font-size: 2.5rem; }
+            .stat-item p { font-size: 0.9rem; }
+            .stat-item:last-child:nth-child(odd) { grid-column: 1 / -1; }
 
-            .cta-final h4 { font-size: 1.4rem; }
-            .btn-white { padding: 12px 30px; font-size: 1rem; width: 100%; }
+            .cta-final h4 { font-size: 1.6rem; }
+            .btn-white { padding: 14px 30px; font-size: 1rem; width: 100%; box-sizing: border-box; }
         }
 
-        /* Pantallas muy pequeñas */
-        @media (max-width: 400px) {
-            .cards-grid { grid-template-columns: 1fr; } /* Si el celular es minúsculo, baja a 1 */
+        @media (max-width: 480px) {
+            .cards-grid { grid-template-columns: 1fr; }
             .trust-stats { grid-template-columns: 1fr; }
+            .hero-title h1 { font-size: 2.5rem; }
         }
     </style>
 </head>
@@ -315,8 +368,6 @@
                                 <li><a href="cabello.html">Cuidado del Cabello</a></li>
                             </ul>
                         </li>
-
-                       <!--<li><a href="naturales.html"><i class="fas fa-mug-hot"></i> Naturales</a></li>-->
                     </ul>
                 </li>
 
@@ -415,22 +466,22 @@
         <section class="trust-banner">
             <div class="trust-stats">
                 <div class="stat-item">
-                    <h3>+150</h3>
+                    <h3 class="counter" data-target="150">+150</h3>
                     <p>Productos Naturales</p>
                 </div>
                 <div class="stat-item">
-                    <h3>5000+</h3>
+                    <h3 class="counter" data-target="5000">5000+</h3>
                     <p>Clientes Satisfechos</p>
                 </div>
                 <div class="stat-item">
-                    <h3>2020</h3>
+                    <h3 class="counter" data-target="2020">2020</h3>
                     <p>Año de Fundación</p>
                 </div>
             </div>
             
             <div class="cta-final">
                 <h4>¿Listo para transformar tu rutina diaria?</h4>
-                <a href="index.html#productos" class="btn-white">Explorar Productos <i class="fas fa-arrow-right ml-1"></i></a>
+                <a href="index.html#categorias" class="btn-white">Explorar Productos <i class="fas fa-arrow-right ml-1"></i></a>
             </div>
         </section>
     </main>
