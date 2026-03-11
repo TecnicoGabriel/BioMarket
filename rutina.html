@@ -173,37 +173,96 @@
            📱 RESPONSIVE MÓVIL ESTRICTO
            ========================================= */
         @media (max-width: 900px) {
-            .rutina-hero { height: 50vh; }
-            .rutina-hero h1 { font-size: 2.5rem; }
-            .rutina-hero p { font-size: 0.9rem; }
+            .rutina-hero { 
+                height: 45vh; 
+                padding: 0 10px;
+            }
+            .rutina-hero h1 { 
+                font-size: 2.2rem; 
+                margin-bottom: 10px;
+            }
+            .rutina-hero p { 
+                font-size: 0.85rem; 
+            }
             
-            .rutina-intro { padding: 50px 5% 20px; }
-            .rutina-intro h2 { font-size: 2rem; }
+            .rutina-intro { 
+                padding: 30px 15px 25px; 
+                margin: 0;
+            }
+            .rutina-intro h2 { 
+                font-size: 1.8rem; 
+                margin-bottom: 15px;
+            }
+            .rutina-intro p {
+                font-size: 0.95rem;
+                line-height: 1.7;
+            }
             
-            .pasos-section { padding: 20px 5% 60px; }
+            .pasos-section { 
+                padding: 15px; 
+                max-width: 100%;
+                margin: 0;
+            }
             
             /* Colapsar el zigzag a una sola columna */
             .step-row, .step-row:nth-child(even) {
                 flex-direction: column;
-                gap: 30px;
-                margin-bottom: 70px;
+                gap: 0;
+                margin-bottom: 40px;
             }
             
-            .step-img { height: 300px; }
+            .step-img-box {
+                margin-bottom: 20px;
+            }
             
-            /* Ajustar decoraciones para móvil */
+            .step-img { 
+                height: 250px;
+                border-radius: 15px;
+            }
+            
+            /* Ocultar decoraciones para móvil */
             .step-img-box::before, .step-row:nth-child(even) .step-img-box::before {
-                top: 15px; left: 15px; right: auto;
+                display: none;
             }
             
             .step-number, .step-row:nth-child(even) .step-number {
-                font-size: 6rem;
-                top: -40px;
+                font-size: 5rem;
+                opacity: 0.05;
+                top: -30px;
                 left: 0;
                 right: auto;
             }
             
-            .step-content h3 { font-size: 1.8rem; }
+            .step-content {
+                padding: 0;
+            }
+            
+            .step-content .tag {
+                font-size: 0.75rem;
+                padding: 4px 12px;
+                margin-bottom: 10px;
+            }
+            
+            .step-content h3 { 
+                font-size: 1.6rem;
+                margin-bottom: 12px;
+            }
+            
+            .step-content p {
+                font-size: 0.95rem;
+                line-height: 1.6;
+            }
+            
+            .check-list {
+                font-size: 0.9rem;
+                margin-top: 10px;
+            }
+            
+            .link-rutina {
+                font-size: 0.9rem;
+                display: inline-block;
+                margin-top: 12px;
+            }
         }
     </style>
     <link rel="icon" type="image/png" href="img/hoja.png">
@@ -335,7 +394,7 @@
 
             <div class="step-row">
                 <div class="step-img-box">
-                    <img src="img/01.jpg" alt="Vaso de agua con limón" class="step-img">
+                    <img src="img/aguacafe.jpeg" alt="Vaso de agua con limón" class="step-img">
                 </div>
                 <div class="step-content">
                     <span class="step-number">02</span>
@@ -347,20 +406,20 @@
 
             <div class="step-row">
                 <div class="step-img-box">
-                    <img src="img/02.jpg" alt="Cuidado facial natural" class="step-img">
+                    <img src="img/cara.webp" alt="Cuidado facial natural" class="step-img">
                 </div>
                 <div class="step-content">
                     <span class="step-number">03</span>
                     <span class="tag">Cuidado Personal</span>
                     <h3>Nutre tu Piel</h3>
                     <p>Lávate el rostro con agua fría para estimular la circulación. Aplica productos libres de químicos; un buen tónico natural o un sérum ligero ayudarán a proteger tu piel de la contaminación diaria. Este es un momento de autocuidado, masajea tu rostro suavemente y siente la frescura.</p>
-                    <a href="index.html#productos" class="link-rutina" style="color: var(--secondary-color); font-weight: 600; text-decoration: underline;">Ver esenciales de cuidado facial</a>
+                    <a href="cuidadofacial.html" class="link-rutina" style="color: var(--secondary-color); font-weight: 600; text-decoration: underline;">Ver esenciales de cuidado facial</a>
                 </div>
             </div>
 
             <div class="step-row">
                 <div class="step-img-box">
-                    <img src="img/3.jpg" alt="Desayuno nutritivo" class="step-img">
+                    <img src="img/avenas.jpg" alt="Desayuno nutritivo" class="step-img">
                 </div>
                 <div class="step-content">
                     <span class="step-number">04</span>
