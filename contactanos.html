@@ -10,7 +10,7 @@
     
     <style>
         /* =========================================
-           DISEÑO DE PÁGINA DE CONTACTO
+           DISEÑO DE PÁGINA DE CONTACTO (CONTENIDO)
            ========================================= */
         .contact-hero {
             background: linear-gradient(rgba(15, 76, 40, 0.8), rgba(15, 76, 40, 0.8)), url('img/contacto.jpg') center/cover;
@@ -33,8 +33,14 @@
             margin: 0 auto;
         }
 
+        /* Aplicamos box-sizing a todo el contenido de contacto para evitar desbordes */
+        .contact-container, .contact-container * {
+            box-sizing: border-box;
+        }
+
         .contact-container {
             max-width: 1100px;
+            width: 100%;
             margin: 0 auto;
             padding: 0 5% 80px;
             display: grid;
@@ -50,6 +56,7 @@
             box-shadow: 0 10px 30px rgba(15, 76, 40, 0.08);
             border: 1px solid rgba(15, 76, 40, 0.05);
             height: fit-content;
+            width: 100%;
         }
         .contact-info-box h2 {
             font-family: 'Playfair Display', serif;
@@ -62,11 +69,13 @@
             align-items: flex-start;
             margin-bottom: 25px;
             gap: 15px;
+            width: 100%;
         }
         .info-item i {
             font-size: 1.5rem;
             color: var(--accent-color, #f57c00);
             margin-top: 3px;
+            flex-shrink: 0;
         }
         .info-item h4 {
             font-family: 'Poppins', sans-serif;
@@ -78,6 +87,7 @@
             color: var(--light-text, #666);
             font-size: 0.95rem;
             line-height: 1.5;
+            word-wrap: break-word; /* Seguridad extra */
         }
 
         /* Formulario (Derecha) */
@@ -87,6 +97,7 @@
             border-radius: 20px;
             box-shadow: 0 10px 30px rgba(15, 76, 40, 0.08);
             border: 1px solid rgba(15, 76, 40, 0.05);
+            width: 100%;
         }
         .contact-form-box h2 {
             font-family: 'Playfair Display', serif;
@@ -102,6 +113,7 @@
         
         .form-group {
             margin-bottom: 20px;
+            width: 100%;
         }
         .form-group label {
             display: block;
@@ -146,17 +158,36 @@
             box-shadow: 0 8px 20px rgba(15, 76, 40, 0.3);
         }
 
-        /* 📱 RESPONSIVE */
+        /* =========================================
+           📱 RESPONSIVE ESTRICTO (CELULARES)
+           ========================================= */
         @media (max-width: 900px) {
             .contact-container {
                 grid-template-columns: 1fr;
-                gap: 30px;
-                padding: 0 5% 50px;
+                gap: 25px;
+                padding: 0 15px 40px; /* Padding fijo para evitar que salga de la pantalla */
             }
-            .contact-hero { padding: 50px 20px; }
+            .contact-hero { padding: 50px 15px; margin-bottom: 30px; }
             .contact-hero h1 { font-size: 2.2rem; }
-            .contact-form-box { padding: 30px 20px; }
-            .contact-info-box { padding: 30px 20px; }
+            
+            .contact-info-box, .contact-form-box { 
+                padding: 30px 20px; 
+            }
+            
+            .info-item {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .info-item i { margin-top: 0; font-size: 1.8rem; }
+            
+            /* ACHICAMOS LA LETRA DEL CORREO PARA QUE ENCAJE PERFECTO SIN ROMPERSE */
+            .info-item p {
+                font-size: 0.85rem; 
+            }
+            .info-item h4 {
+                font-size: 1rem;
+            }
         }
     </style>
     <link rel="icon" type="image/png" href="img/hoja.png">
@@ -363,16 +394,14 @@
 
             if (contactForm) {
                 contactForm.addEventListener('submit', function(e) {
-                    e.preventDefault(); // Esto frena que te lleve a la pantalla blanca
+                    e.preventDefault(); 
 
                     const btnSubmit = contactForm.querySelector('.btn-submit');
                     const originalText = btnSubmit.innerHTML;
                     
-                    // Cambiamos el texto del botón
                     btnSubmit.innerHTML = 'Enviando... <i class="fas fa-spinner fa-spin" style="margin-left: 5px;"></i>';
                     btnSubmit.disabled = true; 
 
-                    // Enviamos los datos de forma invisible
                     fetch(contactForm.action, {
                         method: 'POST',
                         body: new FormData(contactForm),
@@ -392,7 +421,6 @@
                         alert("Error de conexión. Por favor, revisa tu internet y vuelve a intentarlo.");
                     })
                     .finally(() => {
-                        // Devolvemos el botón a la normalidad
                         btnSubmit.innerHTML = originalText;
                         btnSubmit.disabled = false;
                     });
