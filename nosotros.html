@@ -14,6 +14,10 @@
            * No se tocan variables globales para proteger tu Header/Footer *
            ========================================= */
         
+        main {
+            background: var(--bg-color);
+        }
+        
         /* 1. HERO SECTION */
         .nosotros-hero {
             height: 45vh; 
@@ -201,6 +205,10 @@
            📱 RESPONSIVE MÓVIL ESTRICTO
            ========================================= */
         @media (max-width: 900px) {
+            main { background: var(--bg-color) !important; }
+            .main-header { background: rgba(255, 255, 255, 0.85) !important; }
+            footer { background: #0a1f12 !important; }
+            
             .historia-section, .proposito-section, .compromiso-section { padding: 40px 5%; }
             .hero-title h1 { font-size: 2.5rem; }
             .hero-title p { font-size: 0.85rem; letter-spacing: 1px; }
@@ -309,6 +317,7 @@
 
                 <li><a href="nosotros.html"><i class="fas fa-users"></i> Nosotros</a></li>
                 <li><a href="blog.html"><i class="fas fa-feather-alt"></i> Blog</a></li>
+                <li><a href="contactanos.html"><i class="fas fa-envelope"></i> Contacto</a></li>
             </ul>
         </nav>
             
@@ -404,14 +413,14 @@
                 <a href="#" class="logo footer-logo">
                     🌿 Primaverita <span class="highlight">Naturals</span>
                 </a>
-                <p class="mt-3">Tu espacio de bienestar. Productos naturales seleccionados para cuidar de ti y de los tuyos en armonía con la naturaleza.</p>
+                <p class="mt-3">Tu espacio de bienestar. Productos bionaturales seleccionados para cuidar de ti y de los tuyos en armonía con la naturaleza.</p>
             </div>
 
             <div class="footer-col contact-col">
                 <h3>Contáctanos</h3>
                 <ul class="contact-list">
                     <li><i class="fab fa-whatsapp"></i> +51 906 550 385</li>
-                    <li><i class="fas fa-envelope"></i> hola@primaverita.com</li>
+                    <li><i class="fas fa-envelope"></i> atencionalcliente@primaveritanaturals.com</li>
                     <li><i class="fas fa-map-marker-alt"></i> Lima, Perú</li>
                 </ul>
                 

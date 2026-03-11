@@ -76,10 +76,19 @@ function toggleCart() {
 function saveCartToStorage() {
     localStorage.setItem('primaveritaCart', JSON.stringify(cart));
 }
-
-function addToCart(name, price) {
-    cart.push({ name, price });
-    saveCartToStorage(); // <--- Guardamos cada vez que agregamos
+function addToCart(name, price, quantity = 1) {
+    // Buscamos si el producto ya existe en el carrito
+    const existingItem = cart.find(item => item.name === name);
+    
+    if (existingItem) {
+        // Si ya existe, solo sumamos la cantidad
+        existingItem.quantity += quantity;
+    } else {
+        // Si es nuevo, lo agregamos con la cantidad elegida
+        cart.push({ name, price, quantity: quantity });
+    }
+    
+    saveCartToStorage(); // Guardamos en memoria
     updateCartUI();
     toggleCart(); 
 }
@@ -89,11 +98,14 @@ function removeFromCart(index) {
     saveCartToStorage(); // <--- Guardamos cada vez que borramos
     updateCartUI();
 }
-
 function updateCartUI() {
     if (!cartCountDOM) return;
     
-    cartCountDOM.innerText = cart.length;
+    // Contamos el total real de artículos (sumando las cantidades)
+    let totalItems = 0;
+    cart.forEach(item => totalItems += item.quantity || 1); // El || 1 es por si quedó algún producto viejo guardado
+    cartCountDOM.innerText = totalItems;
+    
     cartItemsDOM.innerHTML = '';
     let total = 0;
 
@@ -101,13 +113,18 @@ function updateCartUI() {
         cartItemsDOM.innerHTML = '<p class="empty-msg">Tu carrito está vacío 🍃</p>';
     } else {
         cart.forEach((item, index) => {
-            total += item.price;
+            // Asegurarnos de que tenga quantity (por si hay caché viejo)
+            if (!item.quantity) item.quantity = 1;
+            
+            const itemTotal = item.price * item.quantity;
+            total += itemTotal;
+            
             const itemDiv = document.createElement('div');
             itemDiv.classList.add('cart-item');
             itemDiv.innerHTML = `
                 <div>
-                    <strong>${item.name}</strong>
-                    <div style="color: #777; font-size: 0.9rem;">S/ ${item.price.toFixed(2)}</div>
+                    <strong>${item.name} <span style="color: #f57c00; font-size: 0.9rem;">(x${item.quantity})</span></strong>
+                    <div style="color: #777; font-size: 0.9rem;">S/ ${itemTotal.toFixed(2)}</div>
                 </div>
                 <i class="fas fa-trash" style="color: #e74c3c; cursor: pointer; padding: 5px;" onclick="removeFromCart(${index})"></i>
             `;
@@ -119,9 +136,6 @@ function updateCartUI() {
         cartTotalDOM.innerText = total.toFixed(2);
     }
 }
-// =========================================
-// 5. CHECKOUT WHATSAPP
-// =========================================
 function checkoutWhatsApp() {
     if (cart.length === 0) {
         alert("Agrega productos a tu canasta primero.");
@@ -129,16 +143,17 @@ function checkoutWhatsApp() {
     }
 
     const phoneNumber = "51906550385"; 
-    let message = "Hola *Primaverita Naturales* 🌿, deseo realizar el siguiente pedido:%0A%0A";
+    let message = "Hola *Primaverita Naturals* 🌿, deseo realizar el siguiente pedido:%0A%0A";
     let total = 0;
 
     cart.forEach(item => {
-        message += `- ${item.name}: S/ ${item.price}%0A`;
-        total += item.price;
+        const itemTotal = item.price * item.quantity;
+        message += `- ${item.quantity}x ${item.name}: S/ ${itemTotal.toFixed(2)}%0A`;
+        total += itemTotal;
     });
 
     message += `%0A*Total a pagar: S/ ${total.toFixed(2)}*`;
-    message += "%0A%0AQuedo atento a los métodos de pago. ¡Gracias!";
+    message += "%0A%0AQuedo atent@ a los métodos de pago. ¡Gracias!";
 
     window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
 }
@@ -317,10 +332,9 @@ function addFromModalToCart() {
     const qtyInput = document.getElementById('m-qty');
     const qty = qtyInput ? parseInt(qtyInput.value) : 1;
     
-    for (let i = 0; i < qty; i++) {
-        // Usamos la función addToCart que ya tienes definida arriba
-        addToCart(currentProduct.nombre, currentProduct.precio);
-    }
+    // Le pasamos la cantidad directamente a la función
+    addToCart(currentProduct.nombre, currentProduct.precio, qty);
+    
     closeModal();
 }
 

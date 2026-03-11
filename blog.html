@@ -91,7 +91,7 @@
     <header class="main-header">
         <div class="header-content">
             <a href="#" class="logo">
-                🌿 Primaverita <span class="highlight">Naturales</span>
+                🌿 Primaverita <span class="highlight">Naturals</span>
             </a>
 
             <nav class="navbar">
@@ -162,6 +162,7 @@
 
                     <li><a href="nosotros.html"><i class="fas fa-users"></i> Nosotros</a></li>
                     <li><a href="blog.html"><i class="fas fa-feather-alt"></i> Blog</a></li>
+                    <li><a href="contactanos.html"><i class="fas fa-envelope"></i> Contacto</a></li>
                 </ul>
             </nav>
 
@@ -187,7 +188,7 @@
         <article class="featured-post">
             <div class="fp-img" style="background-image: url('img/logo.jpg');"></div>
             <div class="fp-content">
-                <span class="fp-cat">Estilo de Vida</span>
+                <span class="fp-cat">Rutinas</span>
                 <h1>Tu Mañana Natural: 5 pasos para empezar el día con energía</h1>
                 <p>La forma en que comienzas tu mañana define el ritmo de tu día. Descubre nuestra rutina paso a paso para conectar tu cuerpo y mente con la naturaleza, sin estrés ni químicos.</p>
                 <a href="rutina.html" class="btn-primary-blog">Leer Artículo Completo</a>
@@ -195,16 +196,17 @@
         </article>
 
         <div class="blog-filters">
-            <button class="filter-btn active">Todos</button>
-            <button class="filter-btn">Cuidado Corporal</button>
-            <button class="filter-btn">Nutrición</button>
-            <button class="filter-btn">Aromaterapia</button>
-            <button class="filter-btn">Rutinas</button>
+            <button class="filter-btn active" data-filter="todos">Todos</button>
+            <button class="filter-btn" data-filter="cuidado">Cuidado Corporal</button>
+            <button class="filter-btn" data-filter="nutricion">Nutrición</button>
+            <button class="filter-btn" data-filter="aromaterapia">Aromaterapia</button>
+            <button class="filter-btn" data-filter="rutinas">Rutinas</button>
+            <button class="filter-btn" data-filter="facial">Cuidado Facial</button>
         </div>
 
         <section class="blog-grid">
             
-            <article class="post-card">
+            <article class="post-card" data-categoria="cuidado">
                 <div class="post-img">
                     <span class="post-badge">Cuidado Corporal</span>
                     <img src="img/cuidado.jpg" alt="Planta de Aloe Vera">
@@ -220,7 +222,7 @@
                 </div>
             </article>
 
-            <article class="post-card">
+            <article class="post-card" data-categoria="aromaterapia">
                 <div class="post-img">
                     <span class="post-badge">Aromaterapia</span>
                     <img src="img/lavanda.webp" alt="Flores de Lavanda">
@@ -236,7 +238,7 @@
                 </div>
             </article>
 
-            <article class="post-card">
+            <article class="post-card" data-categoria="nutricion">
                 <div class="post-img">
                     <span class="post-badge">Nutrición</span>
                     <img src="img/fondocolageno.jpg" alt="Suplementos Naturales">
@@ -252,7 +254,7 @@
                 </div>
             </article>
             
-            <article class="post-card">
+            <article class="post-card" data-categoria="facial">
                 <div class="post-img">
                     <span class="post-badge">Cuidado Facial</span>
                     <img src="img/minifondo.jpg" alt="Cuidado Facial Natural">
@@ -268,6 +270,23 @@
                 </div>
             </article>
 
+
+            <article class="post-card" data-categoria="rutinas">
+                <div class="post-img">
+                    <span class="post-badge">Rutinas</span>
+                    <img src="img/logo.jpg" alt="Rutina Natural">
+                </div>
+                <div class="post-info">
+                    <div class="post-meta">
+                        <span><i class="far fa-calendar-alt"></i> 02 Feb, 2026</span>
+                        <span><i class="far fa-clock"></i> 4 min</span>
+                    </div>
+                    <h2>Tu Mañana Natural: 5 pasos para empezar el día con energía</h2>
+                    <p>La forma en que comienzas tu mañana define el ritmo de tu día. Descubre nuestra rutina paso a paso para conectar tu cuerpo y mente con la naturaleza, sin estrés ni químicos.</p>
+                    <a href="rutina.html" class="read-more-link">Leer Artículo <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </article>
+
         </section>
 
     </main>
@@ -276,16 +295,16 @@
         <div class="container footer-content">
             <div class="footer-col brand-col">
                 <a href="#" class="logo footer-logo">
-                    🌿 Primaverita <span class="highlight">Naturales</span>
+                    🌿 Primaverita <span class="highlight">Naturals</span>
                 </a>
-                <p class="mt-3">Tu espacio de bienestar. Productos naturales seleccionados para cuidar de ti y de los tuyos en armonía con la naturaleza.</p>
+                <p class="mt-3">Tu espacio de bienestar. Productos bionaturales seleccionados para cuidar de ti y de los tuyos en armonía con la naturaleza.</p>
             </div>
 
             <div class="footer-col contact-col">
                 <h3>Contáctanos</h3>
                 <ul class="contact-list">
                     <li><i class="fab fa-whatsapp"></i> +51 906 550 385</li>
-                    <li><i class="fas fa-envelope"></i> hola@primaverita.com</li>
+                    <li><i class="fas fa-envelope"></i> atencionalcliente@primaveritanaturals.com</li>
                     <li><i class="fas fa-map-marker-alt"></i> Lima, Perú</li>
                 </ul>
                 
@@ -301,7 +320,7 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 Primaverita Naturales. Todos los derechos reservados.</p>
+            <p>&copy; 2026 Primaverita Naturals. Todos los derechos reservados.</p>
         </div>
     </footer>
 
@@ -364,5 +383,34 @@
     </div>
 
     <script src="js/main.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const blogCards = document.querySelectorAll('.post-card');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Remover 'active' de todos los botones y agregarlo al clickeado
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+
+                    // Obtener la categoría seleccionada
+                    const filterValue = btn.getAttribute('data-filter');
+
+                    // Mostrar/Ocultar tarjetas
+                    blogCards.forEach(card => {
+                        const cardCategory = card.getAttribute('data-categoria');
+                        
+                        if (filterValue === 'todos' || cardCategory === filterValue) {
+                            card.style.display = 'flex'; // Usamos flex porque tu CSS usa flex para las cards
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
 </body>
 </html>

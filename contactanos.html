@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primaverita Naturals | Contáctanos</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <style>
+        /* =========================================
+           DISEÑO DE PÁGINA DE CONTACTO
+           ========================================= */
+        .contact-hero {
+            background: linear-gradient(rgba(15, 76, 40, 0.8), rgba(15, 76, 40, 0.8)), url('img/contacto.jpg') center/cover;
+            padding: 80px 20px;
+            text-align: center;
+            color: white;
+            margin-bottom: 50px;
+        }
+        .contact-hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            color: white;
+            margin-bottom: 15px;
+        }
+        .contact-hero p {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 300;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 5% 80px;
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 50px;
+        }
+
+        /* Información de Contacto (Izquierda) */
+        .contact-info-box {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(15, 76, 40, 0.08);
+            border: 1px solid rgba(15, 76, 40, 0.05);
+            height: fit-content;
+        }
+        .contact-info-box h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            color: var(--primary-color, #0f4c28);
+        }
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+            gap: 15px;
+        }
+        .info-item i {
+            font-size: 1.5rem;
+            color: var(--accent-color, #f57c00);
+            margin-top: 3px;
+        }
+        .info-item h4 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            color: var(--primary-color, #0f4c28);
+        }
+        .info-item p {
+            color: var(--light-text, #666);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        /* Formulario (Derecha) */
+        .contact-form-box {
+            background: white;
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(15, 76, 40, 0.08);
+            border: 1px solid rgba(15, 76, 40, 0.05);
+        }
+        .contact-form-box h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: var(--primary-color, #0f4c28);
+        }
+        .contact-form-box > p {
+            color: var(--light-text, #666);
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--primary-color, #0f4c28);
+            font-size: 0.95rem;
+        }
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #eee;
+            border-radius: 10px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: #fafdfa;
+        }
+        .form-group input:focus, .form-group textarea:focus {
+            border-color: var(--secondary-color, #2e7d32);
+            outline: none;
+            background: white;
+            box-shadow: 0 0 0 4px rgba(46, 125, 50, 0.1);
+        }
+        .btn-submit {
+            background: var(--primary-color, #0f4c28);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            font-family: 'Poppins', sans-serif;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(15, 76, 40, 0.2);
+        }
+        .btn-submit:hover {
+            background: var(--secondary-color, #2e7d32);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(15, 76, 40, 0.3);
+        }
+
+        /* 📱 RESPONSIVE */
+        @media (max-width: 900px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                padding: 0 5% 50px;
+            }
+            .contact-hero { padding: 50px 20px; }
+            .contact-hero h1 { font-size: 2.2rem; }
+            .contact-form-box { padding: 30px 20px; }
+            .contact-info-box { padding: 30px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="header-content">
+            <a href="index.html" class="logo">
+                🌿 Primaverita <span class="highlight">Naturals</span>
+            </a>
+
+            <nav class="navbar">
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
+                    
+                    <li class="dropdown" id="productosDropdown">
+                        <a href="#" onclick="toggleSubmenu(event)">
+                            <i class="fas fa-leaf"></i> Productos <i class="fas fa-chevron-down ml-1"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="has-submenu">
+                                <a href="#">
+                                    <span><i class="fas fa-pump-soap"></i> Vitaminas</span>
+                                    <i class="fas fa-chevron-right arrow-icon"></i>
+                                </a>
+                                <ul class="submenu-inner">
+                                    <li><a href="vitaminas.html">Vitaminas</a></li>
+                                    <li><a href="bienestar.html">Bienestar</a></li>
+                                    <li><a href="naturales.html">Naturales</a></li>
+                                    <li><a href="gomitas.html">Gomitas</a></li>
+                                    <li><a href="digestion.html">Digestión y Salud</a></li>
+                                </ul>
+                            </li>
+                            <li class="has-submenu">
+                                <a href="#">
+                                    <span><i class="fas fa-capsules"></i> Suplementos</span>
+                                    <i class="fas fa-chevron-right arrow-icon"></i>
+                                </a>
+                                <ul class="submenu-inner">
+                                    <li><a href="proteinas.html">Proteínas</a></li>
+                                    <li><a href="aminoacidos.html">Aminoácidos</a></li>
+                                    <li><a href="minerales.html">Minerales</a></li>
+                                    <li><a href="colagenos.html">Colágenos</a></li>
+                                    <li><a href="fibras.html">Fibras</a></li>
+                                </ul>
+                            </li>
+                            <li class="has-submenu">
+                                <a href="#">
+                                    <span><i class="fas fa-spa"></i> Abarrotes</span>
+                                    <i class="fas fa-chevron-right arrow-icon"></i>
+                                </a>
+                                <ul class="submenu-inner">
+                                    <li><a href="aceites.html">Aceites y Vinagres</a></li>
+                                    <li><a href="barritas.html">Barritas Saludables</a></li>
+                                    <li><a href="frutossecos.html">Frutos Secos y Cereales</a></li>
+                                    <li><a href="cafe.html">Café y Cacao</a></li>
+                                    <li><a href="avenas.html">Avenas</a></li>
+                                </ul>
+                            </li>
+                            <li class="has-submenu">
+                                <a href="#">
+                                    <span><i class="fas fa-capsules"></i> Cuidado Personal</span>
+                                    <i class="fas fa-chevron-right arrow-icon"></i>
+                                </a>
+                                <ul class="submenu-inner">
+                                    <li><a href="esenciales.html">Aceites Esenciales</a></li>
+                                    <li><a href="cuidadofacial.html">Cuidado Facial</a></li>
+                                    <li><a href="aseopersonal.html">Aseo Personal </a></li>
+                                    <li><a href="cabello.html">Cuidado del Cabello</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li><a href="nosotros.html"><i class="fas fa-users"></i> Nosotros</a></li>
+                    <li><a href="blog.html"><i class="fas fa-feather-alt"></i> Blog</a></li>
+                    <li><a href="contactanos.html" class="active"><i class="fas fa-envelope"></i> Contacto</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-icons">
+                <div class="cart-icon" onclick="toggleCart()">
+                    <div class="cart-btn">
+                        <i class="fas fa-shopping-basket"></i>
+                        <span id="cart-count">0</span>
+                    </div>
+                </div>
+                <div class="menu-toggle" onclick="toggleMenu()">
+                    <div class="bar1"></div><div class="bar2"></div><div class="bar3"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="contact-hero">
+        <h1>Estamos aquí para ti</h1>
+        <p>¿Tienes dudas sobre algún producto o necesitas asesoría natural? Escríbenos y nuestro equipo te responderá lo más pronto posible.</p>
+    </section>
+
+    <main class="contact-container">
+        
+        <div class="contact-info-box">
+            <h2>Información de Contacto</h2>
+            
+            <div class="info-item">
+                <i class="fab fa-whatsapp"></i>
+                <div>
+                    <h4>WhatsApp / Teléfono</h4>
+                    <p>+51 906 550 385<br>Lunes a Sábado: 9am - 6pm</p>
+                </div>
+            </div>
+            
+            <div class="info-item">
+                <i class="fas fa-envelope"></i>
+                <div>
+                    <h4>Correo Electrónico</h4>
+                    <p>atencionalcliente@primaveritanaturals.com<br>Atención en menos de 24 hrs.</p>
+                </div>
+            </div>
+            
+            <div class="info-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <div>
+                    <h4>Ubicación</h4>
+                    <p>Envíos a todo el Perú.<br>Almacén central en Lima.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="contact-form-box">
+            <h2>Envíanos un mensaje</h2>
+            <p>Completa tus datos y nos pondremos en contacto contigo.</p>
+            
+            <form id="form-contacto" action="https://formsubmit.co/atencionalcliente@primaveritanaturals.com" method="POST">
+                
+                <input type="hidden" name="_subject" value="Nuevo mensaje desde la Web de Primaverita!">
+                <input type="hidden" name="_captcha" value="false">
+                
+                <div class="form-group">
+                    <label for="nombre">Nombre Completo</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Ej. María Pérez" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="celular">Celular / WhatsApp</label>
+                    <input type="tel" id="celular" name="celular" placeholder="Ej. 987654321" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="correo">Correo Electrónico</label>
+                    <input type="email" id="correo" name="correo" placeholder="tu_correo@ejemplo.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="mensaje">¿En qué podemos ayudarte?</label>
+                    <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escribe aquí tu consulta o pedido especial..." required></textarea>
+                </div>
+
+                <button type="submit" class="btn-submit">
+                    Enviar Mensaje <i class="fas fa-paper-plane" style="margin-left: 5px;"></i>
+                </button>
+            </form>
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-col brand-col">
+                <a href="#" class="logo footer-logo">🌿 Primaverita <span class="highlight">Naturals</span></a>
+                <p class="mt-3">Tu espacio de bienestar. Productos bionaturales seleccionados para cuidar de ti y de los tuyos en armonía con la naturaleza.</p>
+            </div>
+            <div class="footer-col contact-col">
+                <h3>Contáctanos</h3>
+                <ul class="contact-list">
+                    <li><i class="fab fa-whatsapp"></i> +51 906 550 385</li>
+                    <li><i class="fas fa-envelope"></i> atencionalcliente@primaveritanaturals.com</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Lima, Perú</li>
+                </ul>
+                <a href="https://wa.me/51906550385" target="_blank" class="footer-btn-wa"><i class="fab fa-whatsapp"></i> Chat directo</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Primaverita Naturals. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <div id="cart-sidebar" class="cart-sidebar">
+        <div class="cart-header"><h3>Tu Canasta 🌿</h3><span class="close-cart" onclick="toggleCart()">&times;</span></div>
+        <div class="cart-items" id="cart-items"><p class="empty-msg">Tu carrito está vacío</p></div>
+        <div class="cart-footer">
+            <div class="total">Total: S/ <span id="cart-total">0.00</span></div>
+            <button class="btn-whatsapp" onclick="checkoutWhatsApp()"><i class="fab fa-whatsapp"></i> Pedir por WhatsApp</button>
+        </div>
+    </div>
+    <div id="overlay" class="overlay" onclick="toggleCart()"></div>
+
+    <script src="js/main.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const contactForm = document.getElementById('form-contacto');
+
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault(); // Esto frena que te lleve a la pantalla blanca
+
+                    const btnSubmit = contactForm.querySelector('.btn-submit');
+                    const originalText = btnSubmit.innerHTML;
+                    
+                    // Cambiamos el texto del botón
+                    btnSubmit.innerHTML = 'Enviando... <i class="fas fa-spinner fa-spin" style="margin-left: 5px;"></i>';
+                    btnSubmit.disabled = true; 
+
+                    // Enviamos los datos de forma invisible
+                    fetch(contactForm.action, {
+                        method: 'POST',
+                        body: new FormData(contactForm),
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    })
+                    .then(response => {
+                        if (response.ok) {
+                            alert("¡Gracias! 🌿 Tu mensaje ha sido enviado correctamente. Te responderemos muy pronto.");
+                            contactForm.reset(); 
+                        } else {
+                            alert("Ups, hubo un problema al enviar tu mensaje. Por favor, intenta nuevamente.");
+                        }
+                    })
+                    .catch(error => {
+                        alert("Error de conexión. Por favor, revisa tu internet y vuelve a intentarlo.");
+                    })
+                    .finally(() => {
+                        // Devolvemos el botón a la normalidad
+                        btnSubmit.innerHTML = originalText;
+                        btnSubmit.disabled = false;
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>
